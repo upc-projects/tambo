@@ -1,0 +1,38 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Enzo Lizama
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE SP_LISTAR_ITEM_VENTA
+AS
+BEGIN
+	SELECT * FROM VentaItem
+END
+GO
+
+CREATE PROCEDURE SP_REGISTRAR_ITEM_VENTA(
+	@IDPRODUCTO AS INT, 
+	@IDVENTA AS INT,
+	@CANTIDAD as int,
+	@PRECIO AS FLOAT
+)
+AS
+BEGIN
+	INSERT INTO VentaItem VALUES(@IDPRODUCTO,@IDVENTA,@CANTIDAD,@PRECIO)
+END
+GO
+
+
+
+CREATE PROCEDURE SP_ELIMINAR_ITEM_VENTA(
+	@ID AS INT
+)
+AS
+BEGIN
+	DELETE FROM VentaItem WHERE id = @ID
+END
+GO
