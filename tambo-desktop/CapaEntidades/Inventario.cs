@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
-    class Inventario
+    public class Inventario
     {
         private int Id { get; set; }
         private string Descripcion { get; set; }
-        // LISTA DETALLES INVENTARIO
+        private List<ProductoInventario> objProductoInventarios { get; set; }
     }
 }

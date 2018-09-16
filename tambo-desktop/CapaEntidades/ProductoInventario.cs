@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
-    public class DetalleVenta
+    public class ProductoInventario
     {
+        private Inventario ObjInventario { get; set; }
         private Producto ObjProducto { get; set; }
-        private Venta objVenta { get; set; }
-        private int Cantidad { get; set; }
-        private double SubTotal { get; set; }
+        private int Stock { get; set; }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
-    class MetodoEntrega
+    public class MetodoEntrega
     {
         private int Id { get; set; }
-        // OBJETO MOTORIZADO
+        private Motorizado objMotorizado { get; set; }
         private string DireccionEntrega { get; set; }
         private string DireccionTienda { get; set; }
         private string HoraMax { get; set; }

@@ -9,8 +9,9 @@ namespace CapaEntidades
     public class Producto
     {
         private int Id { get; set; }
-        // OBJETO MARCA
-        // OBJETO PROVEEDOR
+
+        private Marca objMarca { get; set; }
+        private Proveedor objProveedor { get; set; }
         private string Nombre { get; set; }
         private string Descripcion { get; set; }
         private double Precio { get; set; }

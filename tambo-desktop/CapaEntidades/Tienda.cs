@@ -6,14 +6,12 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
-    public class Cliente
+    public class Tienda
     {
         private int Id { get; set; }
-        private string Nombre { get; set; }
-        private string Apellido { get; set; }
-        private string Direccion { get; set; }
+        private Inventario objInventario { get; set; }
         private string Telefono { get; set; }
-        private int Edad { get; set; }
-        private string DNI { get; set; }
+        private string Direccion { get; set; }
+        private string Estado { get; set; }
     }
 }
