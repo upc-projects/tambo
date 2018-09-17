@@ -9,8 +9,8 @@ namespace CapaEntidades
 {
     public class Marca
     {
-        private int Id { get; set; }
-        private string Nombre { get; set; }
-        private string Descripcion { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
     }
 }

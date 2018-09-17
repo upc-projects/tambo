@@ -8,16 +8,15 @@ namespace CapaEntidades
 {
     public class Producto
     {
-        private int Id { get; set; }
-
-        private Marca objMarca { get; set; }
-        private Proveedor objProveedor { get; set; }
-        private string Nombre { get; set; }
-        private string Descripcion { get; set; }
-        private double Precio { get; set; }
-        private string Codigo { get; set; }
-        private string FechaCaducida { get; set; }
-        private string Estado { get; set; }
-        private string Categoria { get; set; }
+        public int Id { get; set; }
+        public Marca objMarca { get; set; }
+        public Proveedor objProveedor { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public double Precio { get; set; }
+        public string Codigo { get; set; }
+        public string FechaCaducida { get; set; }
+        public string Estado { get; set; }
+        public string Categoria { get; set; }
     }
 }

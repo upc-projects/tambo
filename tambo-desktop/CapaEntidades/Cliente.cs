@@ -8,12 +8,12 @@ namespace CapaEntidades
 {
     public class Cliente
     {
-        private int Id { get; set; }
-        private string Nombre { get; set; }
-        private string Apellido { get; set; }
-        private string Direccion { get; set; }
-        private string Telefono { get; set; }
-        private int Edad { get; set; }
-        private string DNI { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Direccion { get; set; }
+        public string Telefono { get; set; }
+        public int Edad { get; set; }
+        public string DNI { get; set; }
     }
 }

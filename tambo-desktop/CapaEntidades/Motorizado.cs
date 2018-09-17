@@ -8,10 +8,10 @@ namespace CapaEntidades
 {
     public class Motorizado
     {
-        private int Id { get; set; }
-        private Tienda objTienda { get; set; }
-        private string Nombre { get; set; }
-        private double Calificacion { get; set; }
+        public int Id { get; set; }
+        public Tienda objTienda { get; set; }
+        public string Nombre { get; set; }
+        public double Calificacion { get; set; }
 
     }
 }

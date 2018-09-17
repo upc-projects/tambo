@@ -8,10 +8,11 @@ namespace CapaEntidades
 {
     public class Tienda
     {
-        private int Id { get; set; }
-        private Inventario objInventario { get; set; }
-        private string Telefono { get; set; }
-        private string Direccion { get; set; }
-        private string Estado { get; set; }
+        public int Id { get; set; }
+        public Inventario objInventario { get; set; }
+        public string Telefono { get; set; }
+        public string Direccion { get; set; }
+        public string Estado { get; set; }
+        // FALTA NOMBRE(?)
     }
 }

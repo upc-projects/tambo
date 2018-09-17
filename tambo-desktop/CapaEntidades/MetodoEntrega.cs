@@ -8,10 +8,10 @@ namespace CapaEntidades
 {
     public class MetodoEntrega
     {
-        private int Id { get; set; }
-        private Motorizado objMotorizado { get; set; }
-        private string DireccionEntrega { get; set; }
-        private string DireccionTienda { get; set; }
-        private string HoraMax { get; set; }
+        public int Id { get; set; }
+        public Motorizado objMotorizado { get; set; }
+        public string DireccionEntrega { get; set; }
+        public string DireccionTienda { get; set; }
+        public string HoraMax { get; set; }
     }
 }

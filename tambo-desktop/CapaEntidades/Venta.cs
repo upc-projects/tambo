@@ -8,13 +8,13 @@ namespace CapaEntidades
 {
     public class Venta
     {
-        private int Id { get; set; }
-        private Tienda objTienda { get; set; }
-        private MetodoEntrega objMetodoEntrega { get; set; }
-        private Cliente objCliente { get; set; }
-        private string Fecha { get; set; }
-        private double Descuento { get; set; }
-        private double Total { get; set; }
-        private List<DetalleVenta> objDetalleVentas { get; set; }
+        public int Id { get; set; }
+        public Tienda objTienda { get; set; }
+        public MetodoEntrega objMetodoEntrega { get; set; }
+        public Cliente objCliente { get; set; }
+        public string Fecha { get; set; }
+        public double Descuento { get; set; }
+        public double Total { get; set; }
+        public List<DetalleVenta> objDetalleVentas { get; set; }
     }
 }

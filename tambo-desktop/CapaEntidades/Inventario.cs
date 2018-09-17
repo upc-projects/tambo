@@ -8,8 +8,8 @@ namespace CapaEntidades
 {
     public class Inventario
     {
-        private int Id { get; set; }
-        private string Descripcion { get; set; }
-        private List<ProductoInventario> objProductoInventarios { get; set; }
+        public int Id { get; set; }
+        public string Descripcion { get; set; }
+        public List<ProductoInventario> objProductoInventarios { get; set; }
     }
 }
