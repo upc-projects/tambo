@@ -23,7 +23,7 @@ namespace Principal
             proveedorNE = new ProveedorNE();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace Principal
                 proveedor.Email = textBoxCorreo.Text;
 
                 int i = proveedorNE.RegistrarProveedor(proveedor);
-             
+
                 MessageBox.Show("Registro OK ");
             }
             catch (Exception ex)

@@ -24,5 +24,11 @@ namespace Principal
             inventario.MdiParent = this.MdiParent;
             inventario.Show();
         }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNuevoProveedor formProveedor = new FormNuevoProveedor();
+            formProveedor.Show();
+        }
     }
 }
