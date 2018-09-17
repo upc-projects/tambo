@@ -1,4 +1,4 @@
-﻿using CapaDatos;
+﻿
 using CapaEntidades;
 using CapaNegocios;
 using System;
@@ -28,7 +28,6 @@ namespace Principal
             try
             {
                 Proveedor proveedor = new Proveedor();
-                ProveedorDAO proveedorDAO = new ProveedorDAO();
 
                 proveedor.Nombre = textBoxNombre.Text;
                 proveedor.Descripcion = textBoxDescripcion.Text;

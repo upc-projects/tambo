@@ -9,7 +9,7 @@ using CapaEntidades;
 
 namespace CapaDatos
 {
-    class MotorizadoDAO
+    public class MotorizadoDAO
     {
         Conexion conexion = new Conexion();
         SqlConnection sqlConnection = new SqlConnection();

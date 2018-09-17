@@ -9,7 +9,7 @@ using CapaEntidades;
 
 namespace CapaDatos
 {
-    class MarcaDAO
+    public class MarcaDAO
     {
         Conexion conexion = new Conexion();
         SqlConnection sqlConnection = new SqlConnection();
