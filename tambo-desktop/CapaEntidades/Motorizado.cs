@@ -9,7 +9,7 @@ namespace CapaEntidades
     public class Motorizado
     {
         public int Id { get; set; }
-        public Tienda objTienda { get; set; }
+        public Local objTienda { get; set; }
         public string Nombre { get; set; }
         public double Calificacion { get; set; }
 

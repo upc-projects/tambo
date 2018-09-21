@@ -9,7 +9,7 @@ namespace CapaEntidades
     public class Venta
     {
         public int Id { get; set; }
-        public Tienda objTienda { get; set; }
+        public Local objTienda { get; set; }
         public MetodoEntrega objMetodoEntrega { get; set; }
         public Cliente objCliente { get; set; }
         public string Fecha { get; set; }

@@ -23,7 +23,7 @@ namespace CapaDatos
             return dataTable;
         }
 
-        public int RegistrarProducto(Tienda tienda)
+        public int RegistrarProducto(Local tienda)
         {
             sqlConnection = conexion.GetConnection();
             sqlConnection.Open();
