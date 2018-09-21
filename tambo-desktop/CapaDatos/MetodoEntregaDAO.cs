@@ -9,7 +9,7 @@ using CapaEntidades;
 
 namespace CapaDatos
 {
-    class MetodoEntregaDAO
+    public class MetodoEntregaDAO
     {
 
         Conexion conexion = new Conexion();

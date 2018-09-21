@@ -9,7 +9,7 @@ using CapaEntidades;
 
 namespace CapaDatos
 {
-    class ProductoInventarioDAO
+    public class ProductoInventarioDAO
     {
         Conexion conexion = new Conexion();
         SqlConnection sqlConnection = new SqlConnection();
