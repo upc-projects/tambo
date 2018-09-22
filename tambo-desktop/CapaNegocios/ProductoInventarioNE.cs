@@ -28,6 +28,5 @@ namespace CapaNegocios
             return productoInventarioDAO.RegistrarProductoInventario(productoInventario);
         }
 
-
-        }
+    }
 }

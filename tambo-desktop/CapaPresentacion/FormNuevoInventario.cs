@@ -15,27 +15,46 @@ namespace Principal
     public partial class FormNuevoInventario : Form
     {
         private TiendaNE tiendaNe;
-        private DetalleVentaNE detalleVentaNe;
-        private InventarioNE inventarioNe;
+        private ProductoInventarioNE productoInventarioNe;
 
         public FormNuevoInventario()
         {
             InitializeComponent();
             tiendaNe = new TiendaNE();
-            detalleVentaNe = new DetalleVentaNE();
+            productoInventarioNe = new ProductoInventarioNE();
         }
 
         private void FormNuevoInventario_Load(object sender, EventArgs e)
         {
             comboBoxTienda.DataSource = tiendaNe.ListarTienda();
-            // comboboxtienda.datasource = productone.listarproductos();
+            comboBoxTienda.DisplayMember = "NOMBRE";
+            comboBoxTienda.ValueMember = "ID";
+            //comboboxtienda.datasource = productone.listarproductos();
 
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            DetalleVenta detalleVenta = new DetalleVenta();
-            detalleVenta.Cantidad = Int32.Parse(TextBoxStock.Text);
+            try
+            {
+                Producto producto = new Producto();
+                Tienda tienda = new Tienda();
+                tienda.Id = Int32.Parse(comboBoxTienda.SelectedValue.ToString());
+                producto.Id = 1; // VALOR ID DEL PRODUCTO
+                ProductoInventario pi = new ProductoInventario();
+                pi.Stock =Int32.Parse(TextBoxStock.Text);
+                pi.ObjTienda = tienda;
+                pi.ObjProducto = producto;
+                pi.Subtotal = 0;
+                productoInventarioNe.RegistrarProductoInventario(pi);
+                MessageBox.Show("STOCK REGISTRADO");
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("ERROR : " + exception.Message)
+                throw;
+            }
+            
         }
     }
 }

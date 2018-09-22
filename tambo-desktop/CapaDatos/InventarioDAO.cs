@@ -32,7 +32,7 @@ namespace CapaDatos
             {
                 SqlCommand cmd = new SqlCommand("SP_REGISTRAR_INVENTARIO", sqlConnection, tr);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@DESCRIPCION", SqlDbType.VarChar).Value = inventario.Descripcion;
+                cmd.Parameters.Add("@TOTAL", SqlDbType.Float).Value = inventario.Total;
 
                 try
                 {

@@ -33,7 +33,7 @@ namespace CapaDatos
                 SqlCommand cmd = new SqlCommand("SP_REGISTRAR_INVENTARIO", sqlConnection, tr);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@ID_PRODUCTO", SqlDbType.Int).Value = detalleVenta.ObjProducto.Id;
-                cmd.Parameters.Add("@ID_VENTA", SqlDbType.Int).Value = detalleVenta.objVenta.Id;
+                
                 cmd.Parameters.Add("@CANTIDAD", SqlDbType.Int).Value = detalleVenta.Cantidad;
                 cmd.Parameters.Add("@SUBTOTAL", SqlDbType.Money).Value = detalleVenta.SubTotal;
 
