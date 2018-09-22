@@ -40,8 +40,8 @@
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.guardarButton = new System.Windows.Forms.ToolStripButton();
+            this.cancelarButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,30 +129,30 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.guardarButton,
+            this.cancelarButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(457, 25);
             this.toolStrip1.TabIndex = 10;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // guardarButton
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
-            this.toolStripButton1.Text = "Guardar";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            this.guardarButton.Image = ((System.Drawing.Image)(resources.GetObject("guardarButton.Image")));
+            this.guardarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.guardarButton.Name = "guardarButton";
+            this.guardarButton.Size = new System.Drawing.Size(69, 22);
+            this.guardarButton.Text = "Guardar";
+            this.guardarButton.Click += new System.EventHandler(this.toolStripButton1_Click_1);
             // 
-            // toolStripButton2
+            // cancelarButton
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(73, 22);
-            this.toolStripButton2.Text = "Cancelar";
+            this.cancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelarButton.Image")));
+            this.cancelarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cancelarButton.Name = "cancelarButton";
+            this.cancelarButton.Size = new System.Drawing.Size(73, 22);
+            this.cancelarButton.Text = "Cancelar";
             // 
             // FormNuevoProveedor
             // 
@@ -172,6 +172,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormNuevoProveedor";
             this.Text = "FormNuevoProveedor";
+            this.Load += new System.EventHandler(this.FormNuevoProveedor_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -192,7 +193,7 @@
         private System.Windows.Forms.TextBox textBoxTelefono;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton guardarButton;
+        private System.Windows.Forms.ToolStripButton cancelarButton;
     }
 }

@@ -20,10 +20,14 @@ namespace CapaNegocios
         }
 
 
-        public DataTable ListarProductos()
-        { return tiendaDAO.ListarProductos(); }
+        public DataTable ListarTienda()
+        {
+            return tiendaDAO.ListarTiendas();
+        }
 
-        public int RegistrarProducto(Tienda tienda)
-        { return tiendaDAO.RegistrarProducto(tienda); }
+        public int RegistrarTienda(Tienda tienda)
+        {
+            return tiendaDAO.RegistrarTienda(tienda);
+        }
     }
 }

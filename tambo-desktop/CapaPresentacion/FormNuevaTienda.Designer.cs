@@ -32,12 +32,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.textBoxDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTelefonoTienda = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxEstadoTienda = new System.Windows.Forms.TextBox();
+            this.textBoxNombreTienda = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +61,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(69, 22);
             this.toolStripButton1.Text = "Guardar";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -68,17 +71,17 @@
             this.toolStripButton2.Size = new System.Drawing.Size(73, 22);
             this.toolStripButton2.Text = "Cancelar";
             // 
-            // textBoxNombre
+            // textBoxDireccion
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(115, 51);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(284, 20);
-            this.textBoxNombre.TabIndex = 24;
+            this.textBoxDireccion.Location = new System.Drawing.Point(115, 57);
+            this.textBoxDireccion.Name = "textBoxDireccion";
+            this.textBoxDireccion.Size = new System.Drawing.Size(284, 20);
+            this.textBoxDireccion.TabIndex = 24;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 80);
+            this.label2.Location = new System.Drawing.Point(24, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 23;
@@ -87,18 +90,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 54);
+            this.label1.Location = new System.Drawing.Point(24, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 22;
             this.label1.Text = "Direccion";
             // 
-            // textBox1
+            // textBoxTelefonoTienda
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(284, 20);
-            this.textBox1.TabIndex = 27;
+            this.textBoxTelefonoTienda.Location = new System.Drawing.Point(115, 83);
+            this.textBoxTelefonoTienda.Name = "textBoxTelefonoTienda";
+            this.textBoxTelefonoTienda.Size = new System.Drawing.Size(284, 20);
+            this.textBoxTelefonoTienda.TabIndex = 27;
             // 
             // label3
             // 
@@ -109,23 +112,43 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "Estado";
             // 
-            // textBox2
+            // textBoxEstadoTienda
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(284, 20);
-            this.textBox2.TabIndex = 29;
+            this.textBoxEstadoTienda.Location = new System.Drawing.Point(115, 109);
+            this.textBoxEstadoTienda.Name = "textBoxEstadoTienda";
+            this.textBoxEstadoTienda.Size = new System.Drawing.Size(284, 20);
+            this.textBoxEstadoTienda.TabIndex = 29;
+            // 
+            // textBoxNombreTienda
+            // 
+            this.textBoxNombreTienda.Location = new System.Drawing.Point(115, 28);
+            this.textBoxNombreTienda.Name = "textBoxNombreTienda";
+            this.textBoxNombreTienda.Size = new System.Drawing.Size(284, 20);
+            this.textBoxNombreTienda.TabIndex = 31;
+            this.textBoxNombreTienda.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Nombre";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // FormNuevaTienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 141);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxNombreTienda);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBoxEstadoTienda);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxTelefonoTienda);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBoxNombre);
+            this.Controls.Add(this.textBoxDireccion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormNuevaTienda";
@@ -142,11 +165,13 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.TextBox textBoxDireccion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTelefonoTienda;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxEstadoTienda;
+        private System.Windows.Forms.TextBox textBoxNombreTienda;
+        private System.Windows.Forms.Label label4;
     }
 }

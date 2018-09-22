@@ -44,5 +44,10 @@ namespace Principal
                 MessageBox.Show("Ocurrio un error " + ex.Message);
             }
         }
+
+        private void FormNuevoProveedor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

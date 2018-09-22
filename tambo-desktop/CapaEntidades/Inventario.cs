@@ -10,6 +10,5 @@ namespace CapaEntidades
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        public List<ProductoInventario> objProductoInventarios { get; set; }
     }
 }

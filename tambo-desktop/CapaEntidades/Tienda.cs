@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
-    public class Local
+    public class Tienda
     {
         public int Id { get; set; }
         public string Telefono { get; set; }

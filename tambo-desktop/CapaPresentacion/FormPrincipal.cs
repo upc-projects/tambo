@@ -30,5 +30,11 @@ namespace Principal
             FormNuevoProveedor formProveedor = new FormNuevoProveedor();
             formProveedor.Show();
         }
+
+        private void tiendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTienda formTienda = new FormTienda();
+            formTienda.Show();
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         SqlConnection sqlConnection = new SqlConnection();
 
-        public DataTable ListarProductos()
+        public DataTable ListarTiendas()
         {
             sqlConnection = conexion.GetConnection();
             SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_TIENDA", sqlConnection);
@@ -23,7 +23,7 @@ namespace CapaDatos
             return dataTable;
         }
 
-        public int RegistrarProducto(Local tienda)
+        public int RegistrarTienda(Tienda tienda)
         {
             sqlConnection = conexion.GetConnection();
             sqlConnection.Open();
@@ -33,11 +33,10 @@ namespace CapaDatos
                 SqlCommand cmd = new SqlCommand("SP_REGISTRAR_TIENDA", sqlConnection, tr);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("@ID_INVENTARIO", SqlDbType.Int).Value = tienda.objInventario.Id;
-                cmd.Parameters.Add("@TELEFONO", SqlDbType.Int).Value = tienda.Telefono;
+                cmd.Parameters.Add("@NOMBRE", SqlDbType.VarChar).Value = tienda.Nombre;
+                cmd.Parameters.Add("@TELEFONO", SqlDbType.VarChar).Value = tienda.Telefono;
                 cmd.Parameters.Add("@DIRECCION", SqlDbType.VarChar).Value = tienda.Direccion;
                 cmd.Parameters.Add("@ESTADO", SqlDbType.VarChar).Value = tienda.Estado;
- 
 
                 try
                 {

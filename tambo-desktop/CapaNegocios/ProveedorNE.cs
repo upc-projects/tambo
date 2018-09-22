@@ -20,10 +20,14 @@ namespace CapaNegocios
 
 
         public DataTable ListarProveedores()
-        { return proveedorDAO.ListarProveedores(); }
+        {
+            return proveedorDAO.ListarProveedores();
+        }
 
         public int RegistrarProveedor(Proveedor proveedor)
-        { return proveedorDAO.RegistrarProveedor(proveedor); }
-
+        {
+            return proveedorDAO.RegistrarProveedor(proveedor);
         }
+
+    }
 }
