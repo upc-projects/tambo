@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace CapaEntidades
     public class Inventario
     {
         public int Id { get; set; }
-        public string Descripcion { get; set; }
+        public double total { get; set; }
+        private List<DetalleVenta> ListDetalleVentas { get; set; }
     }
 }

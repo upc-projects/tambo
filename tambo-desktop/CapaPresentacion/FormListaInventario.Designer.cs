@@ -29,24 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListaInventario));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTiendas = new System.Windows.Forms.DataGridView();
             this.toolStripInventario = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewInventarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTiendas)).BeginInit();
             this.toolStripInventario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInventarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewTiendas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 34);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1004, 405);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridViewTiendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTiendas.Location = new System.Drawing.Point(12, 28);
+            this.dataGridViewTiendas.Name = "dataGridViewTiendas";
+            this.dataGridViewTiendas.Size = new System.Drawing.Size(395, 329);
+            this.dataGridViewTiendas.TabIndex = 5;
             // 
             // toolStripInventario
             // 
@@ -58,7 +59,7 @@
             this.toolStripButton2});
             this.toolStripInventario.Location = new System.Drawing.Point(0, 0);
             this.toolStripInventario.Name = "toolStripInventario";
-            this.toolStripInventario.Size = new System.Drawing.Size(1036, 27);
+            this.toolStripInventario.Size = new System.Drawing.Size(777, 27);
             this.toolStripInventario.TabIndex = 4;
             this.toolStripInventario.Text = "toolStrip1";
             // 
@@ -99,19 +100,29 @@
             this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
+            // dataGridViewInventarios
+            // 
+            this.dataGridViewInventarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewInventarios.Location = new System.Drawing.Point(428, 28);
+            this.dataGridViewInventarios.Name = "dataGridViewInventarios";
+            this.dataGridViewInventarios.Size = new System.Drawing.Size(337, 329);
+            this.dataGridViewInventarios.TabIndex = 6;
+            // 
             // FormListaInventario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 454);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(777, 369);
+            this.Controls.Add(this.dataGridViewInventarios);
+            this.Controls.Add(this.dataGridViewTiendas);
             this.Controls.Add(this.toolStripInventario);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormListaInventario";
             this.Text = "FormListaInventario";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormListaInventario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTiendas)).EndInit();
             this.toolStripInventario.ResumeLayout(false);
             this.toolStripInventario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInventarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,11 +130,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewTiendas;
         private System.Windows.Forms.ToolStrip toolStripInventario;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.DataGridView dataGridViewInventarios;
     }
 }
