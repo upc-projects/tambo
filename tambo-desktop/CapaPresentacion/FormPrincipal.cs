@@ -17,24 +17,9 @@ namespace Principal
             InitializeComponent();
         }
 
-        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void agregarTiendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormListaInventario inventario = new FormListaInventario();
-            
-            inventario.MdiParent = this.MdiParent;
-            inventario.Show();
-        }
 
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormNuevoProveedor formProveedor = new FormNuevoProveedor();
-            formProveedor.Show();
-        }
-
-        private void tiendaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormTienda formTienda = new FormTienda();
-            formTienda.Show();
         }
     }
 }

@@ -12,4 +12,3 @@ namespace CapaEntidades
         public string Nombre { get; set; }
     }
 }
-}
