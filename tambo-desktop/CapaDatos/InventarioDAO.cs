@@ -23,6 +23,26 @@ namespace CapaDatos
             return dataTable;
         }
 
+        public Inventario ListarInventarioDireccion(string descripcion)
+        {
+            sqlConnection = conexion.GetConnection();
+
+            SqlCommand cmd = new SqlCommand("SP_LISTAR_INVENTARIO_DIRECCION", sqlConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@DIRECCION", SqlDbType.VarChar).Value = descripcion;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            
+            Inventario objInventario = new Inventario();
+            objInventario.Id = int.Parse(dt.Rows[0][0].ToString());
+            objInventario.Descripcion = dt.Rows[0][1].ToString();
+
+            return objInventario;
+        }
+
         public int RegistrarInventario(Inventario inventario)
         {
             sqlConnection = conexion.GetConnection();

@@ -24,6 +24,11 @@ namespace CapaNegocios
             return inventarioDAO.ListarInventario();
         }
 
+        public Inventario ListarInventarioDireccion(string direccion)
+        {
+            return inventarioDAO.ListarInventarioDireccion(direccion);
+        }
+
         public int RegistrarInventario(Inventario inventario)
         {
             return inventarioDAO.RegistrarInventario(inventario);

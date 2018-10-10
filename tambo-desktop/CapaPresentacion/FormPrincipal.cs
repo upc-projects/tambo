@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion;
 
 namespace Principal
 {
@@ -19,7 +20,8 @@ namespace Principal
 
         private void agregarTiendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormNuevaTienda fmr = new FormNuevaTienda();
+            fmr.ShowDialog();
         }
     }
 }
