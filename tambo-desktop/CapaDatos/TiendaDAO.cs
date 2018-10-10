@@ -14,6 +14,22 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         SqlConnection sqlConnection = new SqlConnection();
 
+        public DataTable ListarDetalleInventario(int idInventario)
+        {
+            sqlConnection = conexion.GetConnection();
+
+            SqlCommand cmd = new SqlCommand("SP_LISTAR_DETALLE_INVENTARIO", sqlConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@IDINVENTARIO", SqlDbType.Int).Value = idInventario;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+           
+            return dt;
+        }
+
         public DataTable ListarTiendas()
         {
             sqlConnection = conexion.GetConnection();
