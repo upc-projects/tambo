@@ -10,7 +10,7 @@ namespace CapaEntidades
     public class Inventario
     {
         public int Id { get; set; }
-        public double Total { get; set; }
-        private List<DetalleVenta> ListDetalleVentas { get; set; }
+        public string Descripcion { get; set; }
+        private List<ProductoInventario> ListProductoInventarios { get; set; }
     }
 }
