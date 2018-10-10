@@ -17,7 +17,7 @@ namespace CapaDatos
         public DataTable ListarTiendas()
         {
             sqlConnection = conexion.GetConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_TIENDA", sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_TIENDAS", sqlConnection);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             return dataTable;
@@ -37,6 +37,8 @@ namespace CapaDatos
                 cmd.Parameters.Add("@TELEFONO", SqlDbType.VarChar).Value = tienda.Telefono;
                 cmd.Parameters.Add("@DIRECCION", SqlDbType.VarChar).Value = tienda.Direccion;
                 cmd.Parameters.Add("@ESTADO", SqlDbType.VarChar).Value = tienda.Estado;
+
+                // COMO SE AGREGA ID INVENTARIO ???
 
                 try
                 {

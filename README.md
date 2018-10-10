@@ -2,7 +2,7 @@
   
   # Tambo  
   
-  ![](BD/Tambo#.png)
+  ![](BD/tambo.jpeg)
   
 </div>  
 

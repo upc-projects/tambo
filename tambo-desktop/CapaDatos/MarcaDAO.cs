@@ -14,10 +14,10 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         SqlConnection sqlConnection = new SqlConnection();
 
-        public DataTable ListarMarca()
+        public DataTable ListarMarcas()
         {
             sqlConnection = conexion.GetConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_MARCA", sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_MARCAS", sqlConnection);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             return dataTable;

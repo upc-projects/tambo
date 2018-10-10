@@ -19,7 +19,7 @@ namespace CapaNegocios
 
         public DataTable ListarMarca()
         {
-            return marcaDAO.ListarMarca();
+            return marcaDAO.ListarMarcas();
         }
 
         public int RegistrarMarca(Marca marca)

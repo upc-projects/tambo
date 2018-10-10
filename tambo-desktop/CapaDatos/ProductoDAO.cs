@@ -17,7 +17,7 @@ namespace CapaDatos
         public DataTable ListarProductos()
         {
             sqlConnection = conexion.GetConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_PRODUCTO",sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_PRODUCTOS",sqlConnection);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             return dataTable;
@@ -34,14 +34,12 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("@ID_MARCA", SqlDbType.Int).Value = producto.objMarca.Id;
-                cmd.Parameters.Add("@ID_PROVEEDOR", SqlDbType.Int).Value = producto.objProveedor.Id;
+                cmd.Parameters.Add("@ID_CATEGORIA", SqlDbType.Int).Value = producto.ObjCategoria.Id;
                 cmd.Parameters.Add("@NOMBRE", SqlDbType.VarChar).Value = producto.Nombre;
                 cmd.Parameters.Add("@DESCRIPCION", SqlDbType.VarChar).Value = producto.Descripcion;
                 cmd.Parameters.Add("@PRECIO", SqlDbType.Money).Value = producto.Precio;
                 cmd.Parameters.Add("@CODIGO", SqlDbType.Int).Value = producto.Codigo;
-                cmd.Parameters.Add("@FECHA_CADUCIDAD", SqlDbType.Date).Value = producto.FechaCaducida;
-                cmd.Parameters.Add("@ESTADO", SqlDbType.VarChar).Value = producto.Estado;
-                cmd.Parameters.Add("@CATEGORIA", SqlDbType.VarChar).Value = producto.Categoria;
+                cmd.Parameters.Add("@FECHA_VENCIMIENTO", SqlDbType.Date).Value = producto.FechaCaducida;
 
                 try
                 {

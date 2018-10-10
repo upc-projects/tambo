@@ -17,7 +17,7 @@ namespace CapaDatos
         public DataTable ListarInventario()
         {
             sqlConnection = conexion.GetConnection();
-            SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_INVENTARIO", sqlConnection);
+            SqlDataAdapter adapter = new SqlDataAdapter("SP_LISTAR_INVENTARIOS", sqlConnection);
             DataTable dataTable = new DataTable();
             adapter.Fill(dataTable);
             return dataTable;
@@ -32,7 +32,7 @@ namespace CapaDatos
             {
                 SqlCommand cmd = new SqlCommand("SP_REGISTRAR_INVENTARIO", sqlConnection, tr);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@TOTAL", SqlDbType.Float).Value = inventario.Total;
+                cmd.Parameters.Add("@DESCRIPCION", SqlDbType.VarChar).Value = inventario.Descripcion;
 
                 try
                 {
