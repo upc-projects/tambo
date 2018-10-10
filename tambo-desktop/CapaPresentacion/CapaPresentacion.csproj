@@ -64,12 +64,6 @@
     <Compile Include="FormAgregarProducto.Designer.cs">
       <DependentUpon>FormAgregarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEditarInventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormEditarInventario.Designer.cs">
-      <DependentUpon>FormEditarInventario.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormEditarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,8 +130,20 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListarInventarioTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarInventarioTienda.Designer.cs">
+      <DependentUpon>ListarInventarioTienda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormListarInventario.resx">
+      <DependentUpon>FormListarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarTienda.resx">
+      <DependentUpon>FormListarTienda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNuevaTienda.resx">
       <DependentUpon>FormNuevaTienda.cs</DependentUpon>
     </EmbeddedResource>

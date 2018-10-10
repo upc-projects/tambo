@@ -108,8 +108,8 @@
             // editarInventarioToolStripMenuItem
             // 
             this.editarInventarioToolStripMenuItem.Name = "editarInventarioToolStripMenuItem";
-            this.editarInventarioToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.editarInventarioToolStripMenuItem.Text = "Editar Inventario";
+            this.editarInventarioToolStripMenuItem.Size = new System.Drawing.Size(265, 26);
+            this.editarInventarioToolStripMenuItem.Text = "Listar Inventario por Tienda";
             this.editarInventarioToolStripMenuItem.Click += new System.EventHandler(this.editarInventarioToolStripMenuItem_Click);
             // 
             // marcaToolStripMenuItem

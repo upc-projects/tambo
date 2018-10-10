@@ -38,7 +38,7 @@ namespace Principal
 
         private void editarInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormEditarInventario fmr = new FormEditarInventario();
+            ListarInventarioTienda fmr = new ListarInventarioTienda();
             fmr.ShowDialog();
         }
 

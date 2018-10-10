@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.DGInventario = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DGInventario)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // DGInventario
+            // 
+            this.DGInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGInventario.Location = new System.Drawing.Point(13, 13);
+            this.DGInventario.Name = "DGInventario";
+            this.DGInventario.RowTemplate.Height = 24;
+            this.DGInventario.Size = new System.Drawing.Size(775, 425);
+            this.DGInventario.TabIndex = 1;
+            // 
+            // FormListarInventario
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormListarInventario";
+            this.Controls.Add(this.DGInventario);
+            this.Name = "FormListarInventario";
+            this.Text = "Listado de Inventarios";
+            this.Load += new System.EventHandler(this.FormListarInventario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGInventario)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView DGInventario;
     }
 }
