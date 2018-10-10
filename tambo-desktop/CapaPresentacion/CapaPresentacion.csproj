@@ -46,6 +46,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormAgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarCategoria.Designer.cs">
+      <DependentUpon>FormAgregarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarMarca.Designer.cs">
+      <DependentUpon>FormAgregarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarProducto.Designer.cs">
+      <DependentUpon>FormAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarInventario.Designer.cs">
+      <DependentUpon>FormEditarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarMarca.Designer.cs">
+      <DependentUpon>FormEditarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEliminarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEliminarCategoria.Designer.cs">
+      <DependentUpon>FormEliminarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEliminarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEliminarMarca.Designer.cs">
+      <DependentUpon>FormEliminarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEliminarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEliminarProducto.Designer.cs">
+      <DependentUpon>FormEliminarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarCategoria.Designer.cs">
+      <DependentUpon>FormListarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarInventario.Designer.cs">
+      <DependentUpon>FormListarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarMarca.Designer.cs">
+      <DependentUpon>FormListarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarProducto.Designer.cs">
+      <DependentUpon>FormListarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarTienda.Designer.cs">
+      <DependentUpon>FormListarTienda.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNuevaTienda.cs">
       <SubType>Form</SubType>
     </Compile>
