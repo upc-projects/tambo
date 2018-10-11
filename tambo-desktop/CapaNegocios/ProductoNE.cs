@@ -23,6 +23,16 @@ namespace CapaNegocios
             return productoDAO.ListarProductos();
         }
 
+        public DataTable ListarProductosMarca(int idMarca)
+        {
+            return productoDAO.ListarProductoMarca(idMarca);
+        }
+
+        public DataTable ListarProductosCategoria(int idCategoria)
+        {
+            return productoDAO.ListarProductoCategoria(idCategoria);
+        }
+
         public int RegistrarProducto(Producto producto)
         {
             return productoDAO.RegistrarProducto(producto);

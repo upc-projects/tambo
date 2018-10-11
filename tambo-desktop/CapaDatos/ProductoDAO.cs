@@ -23,6 +23,38 @@ namespace CapaDatos
             return dataTable;
         }
 
+        public DataTable ListarProductoMarca(int idMarca)
+        {
+            sqlConnection = conexion.GetConnection();
+
+            SqlCommand cmd = new SqlCommand("SP_LISTAR_PRODUCTOS_MARCA", sqlConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@ID_MARCA", SqlDbType.Int).Value = idMarca;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+
+        public DataTable ListarProductoCategoria(int idCategoria)
+        {
+            sqlConnection = conexion.GetConnection();
+
+            SqlCommand cmd = new SqlCommand("SP_LISTAR_PRODUCTOS_CATEGORIA", sqlConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@ID_CATEGORIA", SqlDbType.Int).Value = idCategoria;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+
         public int RegistrarProducto(Producto producto)
         {
             sqlConnection = conexion.GetConnection();

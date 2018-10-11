@@ -198,6 +198,12 @@
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProductoPorCategoria.resx">
+      <DependentUpon>FormProductoPorCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductoPorMarca.resx">
+      <DependentUpon>FormProductoPorMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListarInventarioTienda.resx">
       <DependentUpon>ListarInventarioTienda.cs</DependentUpon>
     </EmbeddedResource>
