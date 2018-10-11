@@ -42,6 +42,7 @@
             this.dataGridViewProductos.Name = "dataGridViewProductos";
             this.dataGridViewProductos.Size = new System.Drawing.Size(682, 339);
             this.dataGridViewProductos.TabIndex = 0;
+            this.dataGridViewProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProductos_CellClick);
             // 
             // buttonProductoEditar
             // 
@@ -60,6 +61,7 @@
             this.buttonProductoEliminar.TabIndex = 2;
             this.buttonProductoEliminar.Text = "Eliminar";
             this.buttonProductoEliminar.UseVisualStyleBackColor = true;
+            this.buttonProductoEliminar.Click += new System.EventHandler(this.buttonProductoEliminar_Click);
             // 
             // buttonAgregar
             // 

@@ -42,6 +42,7 @@
             this.dataGridViewMarca.Name = "dataGridViewMarca";
             this.dataGridViewMarca.Size = new System.Drawing.Size(599, 328);
             this.dataGridViewMarca.TabIndex = 0;
+            this.dataGridViewMarca.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMarca_CellClick);
             // 
             // buttonAgregarMarca
             // 

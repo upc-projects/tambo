@@ -14,6 +14,7 @@ namespace CapaPresentacion
     public partial class FormListarMarca : Form
     {
         private MarcaNE marcaNE;
+        private int marcaSeleccionada;
         public FormListarMarca()
         {
             InitializeComponent();
@@ -39,7 +40,12 @@ namespace CapaPresentacion
 
         private void buttonEliminarMarca_Click(object sender, EventArgs e)
         {
-            //falta sp 
+            marcaNE.EliminarMarca(marcaSeleccionada);
+        }
+
+        private void dataGridViewMarca_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            marcaSeleccionada = int.Parse(dataGridViewMarca.CurrentRow.Cells[0].Value.ToString());
         }
     }
 }

@@ -14,6 +14,7 @@ namespace CapaPresentacion
     public partial class FormListarCategoria : Form
     {
         private CategoriaNE categoriaNE;
+        private int categoriaSeleccionada;
         public FormListarCategoria()
         {
             InitializeComponent();
@@ -44,7 +45,12 @@ namespace CapaPresentacion
 
         private void buttonCategoriaEliminar_Click(object sender, EventArgs e)
         {
+            categoriaNE.EliminarCategoria(categoriaSeleccionada);
+        }
 
+        private void DGCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+          categoriaSeleccionada = int.Parse(DGCategoria.CurrentRow.Cells[0].Value.ToString());
         }
     }
 }
