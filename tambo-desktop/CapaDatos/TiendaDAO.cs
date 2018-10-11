@@ -30,6 +30,22 @@ namespace CapaDatos
             return dt;
         }
 
+        public DataTable ListarTiendaProducto(int idProducto)
+        {
+            sqlConnection = conexion.GetConnection();
+
+            SqlCommand cmd = new SqlCommand("SP_LISTAR_TIENDA_PRODUCTO", sqlConnection);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@ID_PRODUCTO", SqlDbType.Int).Value = idProducto;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+
         public DataTable ListarTiendas()
         {
             sqlConnection = conexion.GetConnection();

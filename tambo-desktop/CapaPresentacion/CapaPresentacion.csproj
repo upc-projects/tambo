@@ -204,6 +204,9 @@
     <EmbeddedResource Include="FormProductoPorMarca.resx">
       <DependentUpon>FormProductoPorMarca.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTiendaPorProducto.resx">
+      <DependentUpon>FormTiendaPorProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListarInventarioTienda.resx">
       <DependentUpon>ListarInventarioTienda.cs</DependentUpon>
     </EmbeddedResource>
