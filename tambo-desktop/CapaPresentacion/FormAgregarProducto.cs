@@ -29,12 +29,14 @@ namespace CapaPresentacion
         void llenarMarca()
         {
             comboBoxMarca.DataSource = marcaNE.ListarMarca();
-            //comboBoxMarca.DisplayMember = "Marcas";
-            //comboBoxMarca.ValueMember = "id";
+            comboBoxMarca.DisplayMember = "nombre";
+            comboBoxMarca.ValueMember = "id";
         }
         void llenarCategoria()
         {
             comboBoxCategoria.DataSource = categoriaNE.listarCategorias();
+            comboBoxMarca.DisplayMember = "nombre";
+            comboBoxMarca.ValueMember = "id";
         }
 
         private void buttonGuardarProducto_Click(object sender, EventArgs e)
