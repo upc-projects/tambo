@@ -15,13 +15,11 @@ namespace CapaPresentacion
     public partial class ListarInventarioTienda : Form
     {
         private TiendaNE tienda;
-        private InventarioNE inventario;
 
         public ListarInventarioTienda()
         {
             InitializeComponent();
             tienda = new TiendaNE();
-            inventario = new InventarioNE();
         }
 
         private void ListarInventarioTienda_Load(object sender, EventArgs e)

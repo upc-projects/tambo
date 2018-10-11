@@ -58,3 +58,4 @@ D:\Users\Rodrigo\Documents\Github\tambo\tambo-desktop\CapaPresentacion\bin\Debug
 D:\Users\Rodrigo\Documents\Github\tambo\tambo-desktop\CapaPresentacion\bin\Debug\CapaNegocios.pdb
 D:\Users\Rodrigo\Documents\Github\tambo\tambo-desktop\CapaPresentacion\bin\Debug\CapaDatos.pdb
 D:\Users\Rodrigo\Documents\Github\tambo\tambo-desktop\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
+D:\Users\Rodrigo\Documents\Github\tambo\tambo-desktop\CapaPresentacion\obj\Debug\CapaPresentacion.FormEditarInventario.resources

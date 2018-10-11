@@ -101,5 +101,11 @@ namespace Principal
         {
 
         }
+
+        private void editarInventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormEditarInventario fmr = new FormEditarInventario();
+            fmr.ShowDialog();
+        }
     }
 }
