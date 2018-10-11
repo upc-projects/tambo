@@ -23,7 +23,7 @@ namespace CapaDatos
             return dataTable;
         }
 
-        public int RegistrarProducto(Categoria categoria)
+        public int RegistrarCategoria(Categoria categoria)
         {
             sqlConnection = conexion.GetConnection();
             sqlConnection.Open();
@@ -34,6 +34,34 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@NOMBRE", SqlDbType.VarChar).Value = categoria.Nombre;
             
+                try
+                {
+                    int n = cmd.ExecuteNonQuery();
+                    tr.Commit();
+                    return n;
+                }
+                catch (Exception e)
+                {
+                    tr.Rollback();
+                    Console.WriteLine(e);
+                    throw;
+                }
+
+            }
+        }
+
+        public int EliminarCategoria(int id)
+        {
+            sqlConnection = conexion.GetConnection();
+            sqlConnection.Open();
+
+            using (SqlTransaction tr = sqlConnection.BeginTransaction(IsolationLevel.Serializable))
+            {
+                SqlCommand cmd = new SqlCommand("SP_ELIMINAR_CATEGORIA", sqlConnection, tr);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value =id;
+
                 try
                 {
                     int n = cmd.ExecuteNonQuery();
