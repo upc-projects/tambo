@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace CapaPresentacion
 {
     public partial class FormListarProducto : Form
     {
+        private ProductoNE productoNE;
         public FormListarProducto()
         {
             InitializeComponent();
+            productoNE = new ProductoNE();
+        }
+
+        private void FormListarProducto_Load(object sender, EventArgs e)
+        {
+            dataGridViewProductos.DataSource = productoNE.ListarProductos();
         }
     }
 }

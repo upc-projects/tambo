@@ -70,23 +70,17 @@
     <Compile Include="FormEditarMarca.Designer.cs">
       <DependentUpon>FormEditarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEliminarCategoria.cs">
+    <Compile Include="FormEditarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEliminarCategoria.Designer.cs">
-      <DependentUpon>FormEliminarCategoria.cs</DependentUpon>
+    <Compile Include="FormEditarCategoria.Designer.cs">
+      <DependentUpon>FormEditarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEliminarMarca.cs">
+    <Compile Include="FormEditarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEliminarMarca.Designer.cs">
-      <DependentUpon>FormEliminarMarca.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormEliminarProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormEliminarProducto.Designer.cs">
-      <DependentUpon>FormEliminarProducto.cs</DependentUpon>
+    <Compile Include="FormEditarProducto.Designer.cs">
+      <DependentUpon>FormEditarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="FormListarCategoria.cs">
       <SubType>Form</SubType>
@@ -138,8 +132,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregarCategoria.resx">
+      <DependentUpon>FormAgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarMarca.resx">
+      <DependentUpon>FormAgregarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarProducto.resx">
+      <DependentUpon>FormAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarMarca.resx">
+      <DependentUpon>FormEditarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarCategoria.resx">
+      <DependentUpon>FormEditarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarProducto.resx">
+      <DependentUpon>FormEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarCategoria.resx">
+      <DependentUpon>FormListarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListarInventario.resx">
       <DependentUpon>FormListarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarMarca.resx">
+      <DependentUpon>FormListarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarProducto.resx">
+      <DependentUpon>FormListarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListarTienda.resx">
       <DependentUpon>FormListarTienda.cs</DependentUpon>

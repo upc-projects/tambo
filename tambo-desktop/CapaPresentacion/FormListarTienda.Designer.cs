@@ -35,18 +35,21 @@
             // DGTiendas
             // 
             this.DGTiendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGTiendas.Location = new System.Drawing.Point(13, 13);
+            this.DGTiendas.Location = new System.Drawing.Point(10, 11);
+            this.DGTiendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DGTiendas.Name = "DGTiendas";
             this.DGTiendas.RowTemplate.Height = 24;
-            this.DGTiendas.Size = new System.Drawing.Size(775, 425);
+            this.DGTiendas.Size = new System.Drawing.Size(581, 345);
             this.DGTiendas.TabIndex = 0;
+            this.DGTiendas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGTiendas_CellContentClick);
             // 
             // FormListarTienda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.DGTiendas);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormListarTienda";
             this.Text = "Listado de Tiendas";
             this.Load += new System.EventHandler(this.FormListarTienda_Load);

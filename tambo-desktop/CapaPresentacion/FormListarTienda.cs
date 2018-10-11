@@ -25,5 +25,10 @@ namespace CapaPresentacion
         {
             DGTiendas.DataSource = tienda.ListarTienda();
         }
+
+        private void DGTiendas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

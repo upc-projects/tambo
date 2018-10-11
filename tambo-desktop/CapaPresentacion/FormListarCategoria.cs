@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,38 @@ namespace CapaPresentacion
 {
     public partial class FormListarCategoria : Form
     {
+        private CategoriaNE categoriaNE;
         public FormListarCategoria()
         {
             InitializeComponent();
+            categoriaNE = new CategoriaNE();
+        }
+
+        private void DGCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormListarCategoria_Load(object sender, EventArgs e)
+        {
+            DGCategoria.DataSource = categoriaNE.listarCategorias();
+        }
+
+        private void buttonCategoriaAgregar_Click(object sender, EventArgs e)
+        {
+            FormAgregarCategoria fmr = new FormAgregarCategoria();
+            fmr.ShowDialog();
+        }
+
+        private void buttonCategoriaEditar_Click(object sender, EventArgs e)
+        {
+            FormEditarCategoria frm = new FormEditarCategoria();
+            frm.ShowDialog();
+        }
+
+        private void buttonCategoriaEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

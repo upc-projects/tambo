@@ -50,7 +50,8 @@ namespace Principal
 
         private void eliminarMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormEliminarMarca fmr = new FormEliminarMarca();
+         
+            FormEditarMarca fmr = new FormEditarMarca();
             fmr.ShowDialog();
         }
 
@@ -68,7 +69,7 @@ namespace Principal
 
         private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormEliminarProducto fmr = new FormEliminarProducto();
+            FormEditarProducto fmr = new FormEditarProducto();
             fmr.ShowDialog();
         }
 
@@ -86,7 +87,7 @@ namespace Principal
 
         private void eliminarCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormEliminarCategoria fmr = new FormEliminarCategoria();
+            FormEditarCategoria fmr = new FormEditarCategoria();
             fmr.ShowDialog();
         }
 
@@ -94,6 +95,11 @@ namespace Principal
         {
             FormListarCategoria fmr = new FormListarCategoria();
             fmr.ShowDialog();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
