@@ -37,6 +37,7 @@ namespace CapaDatos
             adapter.Fill(dt);
             
             Inventario objInventario = new Inventario();
+            
             objInventario.Id = int.Parse(dt.Rows[0][0].ToString());
             objInventario.Descripcion = dt.Rows[0][1].ToString();
 
