@@ -50,6 +50,9 @@
             this.listarCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarInventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listarPorCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarPorMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarPorProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +77,8 @@
             // 
             this.tiendaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarTiendaToolStripMenuItem,
-            this.listadoDeTiendasToolStripMenuItem});
+            this.listadoDeTiendasToolStripMenuItem,
+            this.listarPorProductoToolStripMenuItem});
             this.tiendaToolStripMenuItem.Name = "tiendaToolStripMenuItem";
             this.tiendaToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.tiendaToolStripMenuItem.Text = "Tienda";
@@ -153,7 +157,9 @@
             this.productoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarProductoToolStripMenuItem,
             this.eliminarProductoToolStripMenuItem,
-            this.listarProductosToolStripMenuItem});
+            this.listarProductosToolStripMenuItem,
+            this.listarPorCategoriaToolStripMenuItem,
+            this.listarPorMarcaToolStripMenuItem});
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.productoToolStripMenuItem.Text = "Producto";
@@ -227,6 +233,27 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // listarPorCategoriaToolStripMenuItem
+            // 
+            this.listarPorCategoriaToolStripMenuItem.Name = "listarPorCategoriaToolStripMenuItem";
+            this.listarPorCategoriaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.listarPorCategoriaToolStripMenuItem.Text = "Listar por Categoria";
+            this.listarPorCategoriaToolStripMenuItem.Click += new System.EventHandler(this.listarPorCategoriaToolStripMenuItem_Click);
+            // 
+            // listarPorMarcaToolStripMenuItem
+            // 
+            this.listarPorMarcaToolStripMenuItem.Name = "listarPorMarcaToolStripMenuItem";
+            this.listarPorMarcaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.listarPorMarcaToolStripMenuItem.Text = "Listar por Marca";
+            this.listarPorMarcaToolStripMenuItem.Click += new System.EventHandler(this.listarPorMarcaToolStripMenuItem_Click);
+            // 
+            // listarPorProductoToolStripMenuItem
+            // 
+            this.listarPorProductoToolStripMenuItem.Name = "listarPorProductoToolStripMenuItem";
+            this.listarPorProductoToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.listarPorProductoToolStripMenuItem.Text = "Listar por producto";
+            this.listarPorProductoToolStripMenuItem.Click += new System.EventHandler(this.listarPorProductoToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -270,6 +297,9 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarCategoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarInventarioToolStripMenuItem1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem listarPorProductoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarPorCategoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarPorMarcaToolStripMenuItem;
     }
 }
 

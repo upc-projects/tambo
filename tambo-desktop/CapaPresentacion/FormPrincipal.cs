@@ -107,5 +107,23 @@ namespace Principal
             FormEditarInventario fmr = new FormEditarInventario();
             fmr.ShowDialog();
         }
+
+        private void listarPorCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProductoPorCategoria fmr = new FormProductoPorCategoria();
+            fmr.ShowDialog();
+        }
+
+        private void listarPorMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormProductoPorMarca fmr = new FormProductoPorMarca();
+            fmr.ShowDialog();
+        }
+
+        private void listarPorProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTiendaPorProducto fmr = new FormTiendaPorProducto();
+            fmr.ShowDialog();
+        }
     }
 }

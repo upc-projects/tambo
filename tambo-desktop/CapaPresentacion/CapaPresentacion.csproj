@@ -130,6 +130,24 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProductoPorCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductoPorCategoria.Designer.cs">
+      <DependentUpon>FormProductoPorCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductoPorMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductoPorMarca.Designer.cs">
+      <DependentUpon>FormProductoPorMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTiendaPorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTiendaPorProducto.Designer.cs">
+      <DependentUpon>FormTiendaPorProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListarInventarioTienda.cs">
       <SubType>Form</SubType>
     </Compile>
