@@ -1,6 +1,6 @@
 <div align="center">
   
-  # Tambo WEB
+  # Tambo Desktop
   
   ![](BD/tambo.jpeg)
   
