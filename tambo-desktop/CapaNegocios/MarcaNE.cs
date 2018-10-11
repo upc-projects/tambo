@@ -26,5 +26,11 @@ namespace CapaNegocios
         {
             return marcaDAO.RegistrarMarca(marca);
         }
+
+
+        public int EliminarMarca(int id)
+        {
+            return marcaDAO.EliminarMarca(id);
+        }
     }
 }

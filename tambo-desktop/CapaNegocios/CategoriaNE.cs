@@ -25,7 +25,12 @@ namespace CapaNegocios
 
         public int RegistrarCategoria(Categoria categoria)
         {
-            return categoriaDAO.RegistrarProducto(categoria);
+            return categoriaDAO.RegistrarCategoria(categoria);
+        }
+
+        public int EliminarCategoria(int id)
+        {
+            return categoriaDAO.EliminarCategoria(id);
         }
     }
 }

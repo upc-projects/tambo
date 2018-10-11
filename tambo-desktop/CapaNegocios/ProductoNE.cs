@@ -28,6 +28,10 @@ namespace CapaNegocios
             return productoDAO.RegistrarProducto(producto);
         }
 
+        public int EliminarProducto(int id)
+        {
+            return productoDAO.EliminarProducto(id);
+        }
 
         }
 }
