@@ -48,7 +48,7 @@ namespace CapaPresentacion
                 Producto producto = new Producto();
 
                 marca.Id = int.Parse(comboBoxMarca.SelectedValue.ToString());
-                categoria.Id = int.Parse(comboBoxCategoria.SelectedValue.ToString());
+                categoria.Id = 1; //int.Parse(comboBoxCategoria.SelectedValue.ToString());
 
                 producto.objMarca = marca;
                 producto.ObjCategoria = categoria;
@@ -83,6 +83,12 @@ namespace CapaPresentacion
             FormAgregarCategoria fmr = new FormAgregarCategoria();
             fmr.ShowDialog();
 
+        }
+
+        private void FormAgregarProducto_Load(object sender, EventArgs e)
+        {
+            llenarCategoria();
+            llenarMarca();
         }
     }
 }

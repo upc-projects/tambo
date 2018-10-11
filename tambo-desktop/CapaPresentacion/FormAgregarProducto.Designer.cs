@@ -236,6 +236,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormAgregarProducto";
             this.Text = "FormAgregarProducto";
+            this.Load += new System.EventHandler(this.FormAgregarProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
