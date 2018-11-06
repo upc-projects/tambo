@@ -1,8 +1,7 @@
 <div align="center">
   
-  # Tambo  
+  # Tambo Desktop
   
   ![](BD/tambo.jpeg)
   
 </div>  
-
