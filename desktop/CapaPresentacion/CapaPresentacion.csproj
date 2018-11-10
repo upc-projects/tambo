@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6415D404-C3CA-4D22-9D82-E0409B66DB0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>CapaPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormAgregarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarCategoria.Designer.cs">
+      <DependentUpon>FormAgregarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarMarca.Designer.cs">
+      <DependentUpon>FormAgregarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAgregarProducto.Designer.cs">
+      <DependentUpon>FormAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarInventario.Designer.cs">
+      <DependentUpon>FormEditarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarMarca.Designer.cs">
+      <DependentUpon>FormEditarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarCategoria.Designer.cs">
+      <DependentUpon>FormEditarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarProducto.Designer.cs">
+      <DependentUpon>FormEditarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarCategoria.Designer.cs">
+      <DependentUpon>FormListarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarInventario.Designer.cs">
+      <DependentUpon>FormListarInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarMarca.Designer.cs">
+      <DependentUpon>FormListarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarProducto.Designer.cs">
+      <DependentUpon>FormListarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListarTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListarTienda.Designer.cs">
+      <DependentUpon>FormListarTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNuevaTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNuevaTienda.Designer.cs">
+      <DependentUpon>FormNuevaTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductoPorCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductoPorCategoria.Designer.cs">
+      <DependentUpon>FormProductoPorCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProductoPorMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProductoPorMarca.Designer.cs">
+      <DependentUpon>FormProductoPorMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTiendaPorProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTiendaPorProducto.Designer.cs">
+      <DependentUpon>FormTiendaPorProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListarInventarioTienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListarInventarioTienda.Designer.cs">
+      <DependentUpon>ListarInventarioTienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAgregarCategoria.resx">
+      <DependentUpon>FormAgregarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarMarca.resx">
+      <DependentUpon>FormAgregarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAgregarProducto.resx">
+      <DependentUpon>FormAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarInventario.resx">
+      <DependentUpon>FormEditarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarMarca.resx">
+      <DependentUpon>FormEditarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarCategoria.resx">
+      <DependentUpon>FormEditarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarProducto.resx">
+      <DependentUpon>FormEditarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarCategoria.resx">
+      <DependentUpon>FormListarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarInventario.resx">
+      <DependentUpon>FormListarInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarMarca.resx">
+      <DependentUpon>FormListarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarProducto.resx">
+      <DependentUpon>FormListarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListarTienda.resx">
+      <DependentUpon>FormListarTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevaTienda.resx">
+      <DependentUpon>FormNuevaTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductoPorCategoria.resx">
+      <DependentUpon>FormProductoPorCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProductoPorMarca.resx">
+      <DependentUpon>FormProductoPorMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTiendaPorProducto.resx">
+      <DependentUpon>FormTiendaPorProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListarInventarioTienda.resx">
+      <DependentUpon>ListarInventarioTienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidad.csproj">
+      <Project>{ab1116cd-7bc1-40ba-bb35-10045bf53070}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj">
+      <Project>{6f3959c4-1a02-48d7-a483-ceef6ed1b4ae}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
