@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tambo", "Tambo\Tambo.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{6F95B164-53E5-4825-878C-AD882FAC32AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{FB15DD68-197C-48F0-B3CF-3B25BC6FE957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities Layer", "Entities Layer\Entities Layer.csproj", "{EB05F2EE-F8A2-4CF8-96CE-37AB3A245AEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{6F95B164-53E5-4825-878C-AD882FAC32AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F95B164-53E5-4825-878C-AD882FAC32AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F95B164-53E5-4825-878C-AD882FAC32AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB15DD68-197C-48F0-B3CF-3B25BC6FE957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB15DD68-197C-48F0-B3CF-3B25BC6FE957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB15DD68-197C-48F0-B3CF-3B25BC6FE957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB15DD68-197C-48F0-B3CF-3B25BC6FE957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB05F2EE-F8A2-4CF8-96CE-37AB3A245AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB05F2EE-F8A2-4CF8-96CE-37AB3A245AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB05F2EE-F8A2-4CF8-96CE-37AB3A245AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB05F2EE-F8A2-4CF8-96CE-37AB3A245AEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

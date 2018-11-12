@@ -55,8 +55,19 @@
     <Compile Include="Entities\Marca.cs" />
     <Compile Include="Entities\Producto.cs" />
     <Compile Include="Entities\Producto_Inventario.cs" />
+    <Compile Include="Migrations\201811122102488_initialCreate.cs" />
+    <Compile Include="Migrations\201811122102488_initialCreate.Designer.cs">
+      <DependentUpon>201811122102488_initialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryImpl\MarcaRepositoryImpl.cs" />
+    <Compile Include="RepositoryImpl\ProductoRepositoryImpl.cs" />
+    <Compile Include="RepositoryImpl\TiendaRepositoryImpl.cs" />
+    <Compile Include="Repository\CrudRepository.cs" />
+    <Compile Include="Repository\IMarcaRepository.cs" />
+    <Compile Include="Repository\IProductoRepository.cs" />
+    <Compile Include="Repository\ITiendaRepository.cs" />
     <Compile Include="TamboContext.cs" />
     <Compile Include="Entities\Tienda.cs" />
   </ItemGroup>
@@ -64,5 +75,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811122102488_initialCreate.resx">
+      <DependentUpon>201811122102488_initialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
