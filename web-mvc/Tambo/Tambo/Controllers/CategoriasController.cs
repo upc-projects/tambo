@@ -6,18 +6,26 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using BusinessLayer.Service;
+using BusinessLayer.ServiceImpl;
 using DataLayer;
 
 namespace Tambo.Controllers
 {
     public class CategoriasController : Controller
     {
+        private CategoriaService categoriaService;
         private TamboContext db = new TamboContext();
+
+        public CategoriasController()
+        {
+            categoriaService = new CategoriaServiceImpl();
+        }
 
         // GET: Categorias
         public ActionResult Index()
         {
-            return View(db.Categorias.ToList());
+            return View(categoriaService.FindAll());
         }
 
         // GET: Categorias/Details/5
@@ -38,24 +46,29 @@ namespace Tambo.Controllers
         // GET: Categorias/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new Categoria());
         }
 
         // POST: Categorias/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre")] Categoria categoria)
+        public ActionResult Create( Categoria categoria)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Categorias.Add(categoria);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
 
-            return View(categoria);
+                categoriaService.Save(categoria);
+                return RedirectToAction("Index", "Categorias");
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // GET: Categorias/Edit/5

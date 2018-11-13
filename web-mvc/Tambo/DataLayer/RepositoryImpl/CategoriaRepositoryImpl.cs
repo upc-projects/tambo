@@ -8,17 +8,16 @@ using System.Threading.Tasks;
 
 namespace DataLayer.RepositoryImpl
 {
-    public class TiendaRepositoryImpl : ITiendaRepository
+    public class CategoriaRepositoryImpl : ICategoriaRepository
     {
-
         private TamboContext context;
 
-        public TiendaRepositoryImpl()
+        public CategoriaRepositoryImpl()
         {
             context = new TamboContext();
         }
 
-        public bool Delete(Tienda t)
+        public bool Delete(Categoria t)
         {
             try
             {
@@ -32,18 +31,17 @@ namespace DataLayer.RepositoryImpl
             return true;
         }
 
-        public List<Tienda> FindAll()
+        public List<Categoria> FindAll()
         {
-            return context.Tiendas.ToList();
+            return context.Categorias.ToList();
         }
 
-        public Tienda FindById(int? id)
+        public Categoria FindById(int? id)
         {
-            return context.Tiendas
-                .Find(id);
+            return context.Categorias.Find(id);
         }
 
-        public bool Save(Tienda t)
+        public bool Save(Categoria t)
         {
             try
             {
@@ -57,7 +55,7 @@ namespace DataLayer.RepositoryImpl
             return true;
         }
 
-        public bool Update(Tienda t)
+        public bool Update(Categoria t)
         {
             try
             {

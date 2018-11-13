@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Service;
 using DataLayer;
+using DataLayer.Repository;
+using DataLayer.RepositoryImpl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,35 +10,39 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.ServiceImpl
 {
-    class TiendaServiceImpl : CrudService<Tienda>
+    public class TiendaServiceImpl : TiendaService
     {
+
+        private ITiendaRepository tiendaRepository;
+
         public TiendaServiceImpl()
         {
+            tiendaRepository = new TiendaRepositoryImpl();
         }
 
         public bool Delete(Tienda t)
         {
-            throw new NotImplementedException();
+            return tiendaRepository.Delete(t);
         }
 
         public List<Tienda> FindAll()
         {
-            throw new NotImplementedException();
+            return tiendaRepository.FindAll();
         }
 
         public Tienda FindById(int? id)
         {
-            throw new NotImplementedException();
+            return tiendaRepository.FindById(id);
         }
 
         public bool Save(Tienda t)
         {
-            throw new NotImplementedException();
+            return tiendaRepository.Save(t);
         }
 
         public bool Update(Tienda t)
         {
-            throw new NotImplementedException();
+            return tiendaRepository.Update(t);
         }
     }
 }

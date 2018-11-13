@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using BusinessLayer.Service;
+using BusinessLayer.ServiceImpl;
 using DataLayer;
 
 namespace Tambo.Controllers
@@ -13,12 +15,18 @@ namespace Tambo.Controllers
     public class TiendasController : Controller
     {
         private TamboContext db = new TamboContext();
+        private TiendaService tiendaService;
+
+        public TiendasController()
+        {
+            tiendaService = new TiendaServiceImpl();
+        }
 
         // GET: Tiendas
         public ActionResult Index()
         {
             var tiendas = db.Tiendas.Include(t => t.Inventario);
-            return View(tiendas.ToList());
+            return View(tiendaService.FindAll());
         }
 
         // GET: Tiendas/Details/5
@@ -39,26 +47,30 @@ namespace Tambo.Controllers
         // GET: Tiendas/Create
         public ActionResult Create()
         {
-            ViewBag.id_inventario = new SelectList(db.Inventarios, "id", "descripcion");
-            return View();
+            
+            return View(new Tienda());
         }
 
         // POST: Tiendas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre,telefono,direccion,id_inventario")] Tienda tienda)
+        public ActionResult Create(Tienda tienda)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Tiendas.Add(tienda);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
 
-            ViewBag.id_inventario = new SelectList(db.Inventarios, "id", "descripcion", tienda.id_inventario);
-            return View(tienda);
+                tiendaService.Save(tienda);
+                return RedirectToAction("Index", "Tiendas");
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // GET: Tiendas/Edit/5
