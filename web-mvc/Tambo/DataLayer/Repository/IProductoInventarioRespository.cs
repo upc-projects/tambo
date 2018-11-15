@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Repository
 {
-    public interface ICategoriaRepository : CrudRepository<Categoria>
+    public interface IProductoInventarioRespository: CrudRepository<Producto_Inventario>
     {
 
     }
