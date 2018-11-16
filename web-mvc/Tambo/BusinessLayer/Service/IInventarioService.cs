@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Service
 {
-    public interface IInventarioService
+    public interface IInventarioService: CrudService<Inventario>
     {
     }
 }

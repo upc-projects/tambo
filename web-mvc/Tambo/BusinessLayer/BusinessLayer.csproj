@@ -43,10 +43,14 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceImpl\CategoriaServiceImpl.cs" />
+    <Compile Include="ServiceImpl\InventarioServiceImpl.cs" />
     <Compile Include="ServiceImpl\MarcaServiceImpl.cs" />
+    <Compile Include="ServiceImpl\ProductoInventarioServiceImpl.cs" />
     <Compile Include="ServiceImpl\ProductoServiceImpl.cs" />
     <Compile Include="ServiceImpl\TiendaServiceImpl.cs" />
     <Compile Include="Service\CategoriaService.cs" />
+    <Compile Include="Service\IInventarioService.cs" />
+    <Compile Include="Service\IProductoInventarioService.cs" />
     <Compile Include="Service\MarcaService.cs" />
     <Compile Include="Service\CrudService.cs" />
     <Compile Include="Service\ProductoService.cs" />
