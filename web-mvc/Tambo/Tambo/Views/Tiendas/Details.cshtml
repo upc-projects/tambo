@@ -1,4 +1,4 @@
-﻿@model DataLayer.Tienda
+﻿@model Entities_Layer.Tiendas
 
 @{
     ViewBag.Title = "Details";
@@ -7,17 +7,9 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Tienda</h4>
+    <h4>Tiendas</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Inventario.descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Inventario.descripcion)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.nombre)
         </dt>

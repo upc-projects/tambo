@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DataLayer;
+using Entities_Layer;
 
 namespace Tambo.Controllers
 {
@@ -17,7 +18,7 @@ namespace Tambo.Controllers
         // GET: Productos
         public ActionResult Index()
         {
-            var productos = db.Productos.Include(p => p.Categoria).Include(p => p.Marca);
+            var productos = db.Productos.Include(p => p.Categorias).Include(p => p.Marcas);
             return View(productos.ToList());
         }
 
@@ -28,7 +29,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Producto producto = db.Productos.Find(id);
+            Productos producto = db.Productos.Find(id);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -49,7 +50,7 @@ namespace Tambo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,id_marca,nombre,descripcion,precio,fecha_vencimiento,codigo,id_categoria")] Producto producto)
+        public ActionResult Create([Bind(Include = "id,id_marca,nombre,descripcion,precio,fecha_vencimiento,codigo,id_categoria")] Productos producto)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +71,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Producto producto = db.Productos.Find(id);
+            Productos producto = db.Productos.Find(id);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -85,7 +86,7 @@ namespace Tambo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,id_marca,nombre,descripcion,precio,fecha_vencimiento,codigo,id_categoria")] Producto producto)
+        public ActionResult Edit([Bind(Include = "id,id_marca,nombre,descripcion,precio,fecha_vencimiento,codigo,id_categoria")] Productos producto)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +106,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Producto producto = db.Productos.Find(id);
+            Productos producto = db.Productos.Find(id);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -118,7 +119,7 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Producto producto = db.Productos.Find(id);
+            Productos producto = db.Productos.Find(id);
             db.Productos.Remove(producto);
             db.SaveChanges();
             return RedirectToAction("Index");

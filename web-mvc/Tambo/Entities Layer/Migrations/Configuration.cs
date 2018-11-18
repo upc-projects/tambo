@@ -1,18 +1,18 @@
-namespace DataLayer.Migrations
+namespace Entities_Layer.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataLayer.TamboContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Entities_Layer.TamboContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DataLayer.TamboContext context)
+        protected override void Seed(Entities_Layer.TamboContext context)
         {
             //  This method will be called after migrating to the latest version.
 

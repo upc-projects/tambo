@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DataLayer.Producto>
+﻿@model IEnumerable<Entities_Layer.Productos>
 
 @{
     ViewBag.Title = "Index";
@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Categoria.nombre)
+            @Html.DisplayNameFor(model => model.Categorias.nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Marca.nombre)
+            @Html.DisplayNameFor(model => model.Marcas.nombre)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.nombre)
@@ -38,10 +38,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Categoria.nombre)
+            @Html.DisplayFor(modelItem => item.Categorias.nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Marca.nombre)
+            @Html.DisplayFor(modelItem => item.Marcas.nombre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.nombre)

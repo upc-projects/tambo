@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities_Layer;
 
 namespace BusinessLayer.ServiceImpl
 {
@@ -20,27 +21,27 @@ namespace BusinessLayer.ServiceImpl
             tiendaRepository = new TiendaRepositoryImpl();
         }
 
-        public bool Delete(Tienda t)
+        public bool Delete(Tiendas t)
         {
             return tiendaRepository.Delete(t);
         }
 
-        public List<Tienda> FindAll()
+        public List<Tiendas> FindAll()
         {
             return tiendaRepository.FindAll();
         }
 
-        public Tienda FindById(int? id)
+        public Tiendas FindById(int? id)
         {
             return tiendaRepository.FindById(id);
         }
 
-        public bool Save(Tienda t)
+        public bool Save(Tiendas t)
         {
             return tiendaRepository.Save(t);
         }
 
-        public bool Update(Tienda t)
+        public bool Update(Tiendas t)
         {
             return tiendaRepository.Update(t);
         }

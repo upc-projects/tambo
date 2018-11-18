@@ -5,36 +5,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities_Layer;
 
 namespace BusinessLayer.ServiceImpl
 {
-    class ProductoServiceImpl : CrudService<Producto>
+    class ProductoServiceImpl : CrudService<Productos>
     {
         public ProductoServiceImpl()
         {
         }
 
-        public bool Delete(Producto t)
+        public bool Delete(Productos t)
         {
             throw new NotImplementedException();
         }
 
-        public List<Producto> FindAll()
+        public List<Productos> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+        
+        public Productos FindById(int? id)
         {
             throw new NotImplementedException();
         }
 
-        public Producto FindById(int? id)
+        public bool Save(Productos t)
         {
             throw new NotImplementedException();
         }
 
-        public bool Save(Producto t)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(Producto t)
+        public bool Update(Productos t)
         {
             throw new NotImplementedException();
         }

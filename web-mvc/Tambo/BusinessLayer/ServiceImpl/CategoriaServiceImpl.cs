@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities_Layer;
 
 namespace BusinessLayer.ServiceImpl
 {
@@ -20,27 +21,27 @@ namespace BusinessLayer.ServiceImpl
             categoriaRepository = new CategoriaRepositoryImpl();
         }
 
-        public bool Delete(Categoria t)
+        public bool Delete(Categorias t)
         {
             return categoriaRepository.Delete(t);
         }
 
-        public List<Categoria> FindAll()
+        public List<Categorias> FindAll()
         {
             return categoriaRepository.FindAll();
         }
 
-        public Categoria FindById(int? id)
+        public Categorias FindById(int? id)
         {
             return categoriaRepository.FindById(id);
         }
 
-        public bool Save(Categoria t)
+        public bool Save(Categorias t)
         {
             return categoriaRepository.Save(t);
         }
 
-        public bool Update(Categoria t)
+        public bool Update(Categorias t)
         {
             return categoriaRepository.Update(t);
         }
