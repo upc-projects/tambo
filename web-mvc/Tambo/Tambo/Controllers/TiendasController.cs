@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Service;
 using BusinessLayer.ServiceImpl;
-using DataLayer;
+using Entities_Layer;
 
 namespace Tambo.Controllers
 {
@@ -17,16 +17,16 @@ namespace Tambo.Controllers
         private TamboContext db = new TamboContext();
         private TiendaService tiendaService;
 
+
         public TiendasController()
         {
-            tiendaService = new TiendaServiceImpl();
+                tiendaService = new TiendaServiceImpl();
         }
 
         // GET: Tiendas
         public ActionResult Index()
         {
-            var tiendas = db.Tiendas.Include(t => t.Inventario);
-            return View(tiendaService.FindAll());
+            return View(db.Tiendas.ToList());
         }
 
         // GET: Tiendas/Details/5
@@ -36,26 +36,26 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tienda tienda = db.Tiendas.Find(id);
-            if (tienda == null)
+            Tiendas tiendas = db.Tiendas.Find(id);
+            if (tiendas == null)
             {
                 return HttpNotFound();
             }
-            return View(tienda);
+            return View(tiendas);
         }
 
         // GET: Tiendas/Create
         public ActionResult Create()
         {
-            
-            return View(new Tienda());
+            return View();
         }
 
         // POST: Tiendas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create(Tienda tienda)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Tiendas tiendas)
         {
             try
             {
@@ -64,12 +64,12 @@ namespace Tambo.Controllers
                     return View();
                 }
 
-                tiendaService.Save(tienda);
+                tiendaService.Save(tiendas);
                 return RedirectToAction("Index", "Tiendas");
             }
             catch (Exception)
             {
-                return View();
+                return View(tiendas);
             }
         }
 
@@ -80,13 +80,12 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tienda tienda = db.Tiendas.Find(id);
-            if (tienda == null)
+            Tiendas tiendas = db.Tiendas.Find(id);
+            if (tiendas == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.id_inventario = new SelectList(db.Inventarios, "id", "descripcion", tienda.id_inventario);
-            return View(tienda);
+            return View(tiendas);
         }
 
         // POST: Tiendas/Edit/5
@@ -94,16 +93,15 @@ namespace Tambo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,telefono,direccion,id_inventario")] Tienda tienda)
+        public ActionResult Edit([Bind(Include = "id,nombre,telefono,direccion")] Tiendas tiendas)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tienda).State = EntityState.Modified;
+                db.Entry(tiendas).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.id_inventario = new SelectList(db.Inventarios, "id", "descripcion", tienda.id_inventario);
-            return View(tienda);
+            return View(tiendas);
         }
 
         // GET: Tiendas/Delete/5
@@ -113,12 +111,12 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tienda tienda = db.Tiendas.Find(id);
-            if (tienda == null)
+            Tiendas tiendas = db.Tiendas.Find(id);
+            if (tiendas == null)
             {
                 return HttpNotFound();
             }
-            return View(tienda);
+            return View(tiendas);
         }
 
         // POST: Tiendas/Delete/5
@@ -126,8 +124,8 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Tienda tienda = db.Tiendas.Find(id);
-            db.Tiendas.Remove(tienda);
+            Tiendas tiendas = db.Tiendas.Find(id);
+            db.Tiendas.Remove(tiendas);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

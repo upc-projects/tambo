@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities_Layer;
 
 namespace DataLayer.RepositoryImpl
 {
@@ -17,7 +18,7 @@ namespace DataLayer.RepositoryImpl
             context = new TamboContext();
         }
 
-        public bool Delete(Categoria t)
+        public bool Delete(Categorias t)
         {
             try
             {
@@ -31,17 +32,17 @@ namespace DataLayer.RepositoryImpl
             return true;
         }
 
-        public List<Categoria> FindAll()
+        public List<Categorias> FindAll()
         {
             return context.Categorias.ToList();
         }
 
-        public Categoria FindById(int? id)
+        public Categorias FindById(int? id)
         {
             return context.Categorias.Find(id);
         }
 
-        public bool Save(Categoria t)
+        public bool Save(Categorias t)
         {
             try
             {
@@ -55,7 +56,7 @@ namespace DataLayer.RepositoryImpl
             return true;
         }
 
-        public bool Update(Categoria t)
+        public bool Update(Categorias t)
         {
             try
             {

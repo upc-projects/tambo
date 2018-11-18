@@ -1,4 +1,4 @@
-namespace DataLayer
+namespace Entities_Layer
 {
     using System;
     using System.Collections.Generic;
@@ -6,13 +6,12 @@ namespace DataLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Productos")]
-    public partial class Producto
+    public partial class Productos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Producto()
+        public Productos()
         {
-            Producto_Inventario = new HashSet<Producto_Inventario>();
+            Inventario = new HashSet<Inventario>();
         }
 
         public int id { get; set; }
@@ -38,11 +37,11 @@ namespace DataLayer
 
         public int id_categoria { get; set; }
 
-        public virtual Categoria Categoria { get; set; }
-
-        public virtual Marca Marca { get; set; }
+        public virtual Categorias Categorias { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producto_Inventario> Producto_Inventario { get; set; }
+        public virtual ICollection<Inventario> Inventario { get; set; }
+
+        public virtual Marcas Marcas { get; set; }
     }
 }

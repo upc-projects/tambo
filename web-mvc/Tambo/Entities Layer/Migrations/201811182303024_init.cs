@@ -1,9 +1,9 @@
-namespace DataLayer.Migrations
+namespace Entities_Layer.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialCreate : DbMigration
+    public partial class init : DbMigration
     {
         public override void Up()
         {
@@ -36,37 +36,19 @@ namespace DataLayer.Migrations
                 .Index(t => t.id_categoria);
             
             CreateTable(
-                "dbo.Marcas",
+                "dbo.Inventario",
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
-                        nombre = c.String(nullable: false, maxLength: 50, unicode: false),
-                        descripcion = c.String(nullable: false, maxLength: 50, unicode: false),
-                    })
-                .PrimaryKey(t => t.id);
-            
-            CreateTable(
-                "dbo.Producto_Inventario",
-                c => new
-                    {
-                        id_inventario = c.Int(nullable: false),
+                        id_tienda = c.Int(nullable: false),
                         id_producto = c.Int(nullable: false),
                         stock = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.id_inventario, t.id_producto, t.stock })
-                .ForeignKey("dbo.Inventarios", t => t.id_inventario)
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.Tiendas", t => t.id_tienda)
                 .ForeignKey("dbo.Productos", t => t.id_producto)
-                .Index(t => t.id_inventario)
+                .Index(t => t.id_tienda)
                 .Index(t => t.id_producto);
-            
-            CreateTable(
-                "dbo.Inventarios",
-                c => new
-                    {
-                        id = c.Int(nullable: false, identity: true),
-                        descripcion = c.String(nullable: false, maxLength: 50, unicode: false),
-                    })
-                .PrimaryKey(t => t.id);
             
             CreateTable(
                 "dbo.Tiendas",
@@ -76,30 +58,34 @@ namespace DataLayer.Migrations
                         nombre = c.String(nullable: false, maxLength: 50, unicode: false),
                         telefono = c.String(nullable: false, maxLength: 50, unicode: false),
                         direccion = c.String(nullable: false, maxLength: 50, unicode: false),
-                        id_inventario = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.Inventarios", t => t.id_inventario)
-                .Index(t => t.id_inventario);
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
+                "dbo.Marcas",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        nombre = c.String(nullable: false, maxLength: 50, unicode: false),
+                        descripcion = c.String(nullable: false, maxLength: 50, unicode: false),
+                    })
+                .PrimaryKey(t => t.id);
             
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.Productos", "id_categoria", "dbo.Categorias");
-            DropForeignKey("dbo.Producto_Inventario", "id_producto", "dbo.Productos");
-            DropForeignKey("dbo.Tiendas", "id_inventario", "dbo.Inventarios");
-            DropForeignKey("dbo.Producto_Inventario", "id_inventario", "dbo.Inventarios");
             DropForeignKey("dbo.Productos", "id_marca", "dbo.Marcas");
-            DropIndex("dbo.Tiendas", new[] { "id_inventario" });
-            DropIndex("dbo.Producto_Inventario", new[] { "id_producto" });
-            DropIndex("dbo.Producto_Inventario", new[] { "id_inventario" });
+            DropForeignKey("dbo.Inventario", "id_producto", "dbo.Productos");
+            DropForeignKey("dbo.Inventario", "id_tienda", "dbo.Tiendas");
+            DropIndex("dbo.Inventario", new[] { "id_producto" });
+            DropIndex("dbo.Inventario", new[] { "id_tienda" });
             DropIndex("dbo.Productos", new[] { "id_categoria" });
             DropIndex("dbo.Productos", new[] { "id_marca" });
-            DropTable("dbo.Tiendas");
-            DropTable("dbo.Inventarios");
-            DropTable("dbo.Producto_Inventario");
             DropTable("dbo.Marcas");
+            DropTable("dbo.Tiendas");
+            DropTable("dbo.Inventario");
             DropTable("dbo.Productos");
             DropTable("dbo.Categorias");
         }

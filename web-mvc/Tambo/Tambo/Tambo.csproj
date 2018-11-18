@@ -248,6 +248,10 @@
       <Project>{6f95b164-53e5-4825-878c-ad882fac32ad}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entities Layer\Entities Layer.csproj">
+      <Project>{eb05f2ee-f8a2-4cf8-96ce-37ab3a245aee}</Project>
+      <Name>Entities Layer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

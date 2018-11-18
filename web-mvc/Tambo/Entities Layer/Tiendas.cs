@@ -1,4 +1,4 @@
-namespace DataLayer
+namespace Entities_Layer
 {
     using System;
     using System.Collections.Generic;
@@ -6,25 +6,29 @@ namespace DataLayer
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Inventario
+    public partial class Tiendas
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Inventario()
+        public Tiendas()
         {
-            Producto_Inventario = new HashSet<Producto_Inventario>();
-            Tiendas = new HashSet<Tienda>();
+            Inventario = new HashSet<Inventario>();
         }
 
         public int id { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string descripcion { get; set; }
+        public string nombre { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string telefono { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string direccion { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Producto_Inventario> Producto_Inventario { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tienda> Tiendas { get; set; }
+        public virtual ICollection<Inventario> Inventario { get; set; }
     }
 }

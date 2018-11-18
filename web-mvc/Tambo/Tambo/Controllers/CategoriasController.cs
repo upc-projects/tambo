@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using BusinessLayer.Service;
 using BusinessLayer.ServiceImpl;
 using DataLayer;
+using Entities_Layer;
 
 namespace Tambo.Controllers
 {
@@ -35,7 +36,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categorias.Find(id);
+            Categorias categoria = db.Categorias.Find(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -46,14 +47,14 @@ namespace Tambo.Controllers
         // GET: Categorias/Create
         public ActionResult Create()
         {
-            return View(new Categoria());
+            return View(new Categorias());
         }
 
         // POST: Categorias/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create( Categoria categoria)
+        public ActionResult Create( Categorias categoria)
         {
             try
             {
@@ -78,7 +79,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categorias.Find(id);
+            Categorias categoria = db.Categorias.Find(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -91,7 +92,7 @@ namespace Tambo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre")] Categoria categoria)
+        public ActionResult Edit([Bind(Include = "id,nombre")] Categorias categoria)
         {
             if (ModelState.IsValid)
             {
@@ -109,7 +110,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categoria categoria = db.Categorias.Find(id);
+            Categorias categoria = db.Categorias.Find(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -122,7 +123,7 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Categoria categoria = db.Categorias.Find(id);
+            Categorias categoria = db.Categorias.Find(id);
             db.Categorias.Remove(categoria);
             db.SaveChanges();
             return RedirectToAction("Index");

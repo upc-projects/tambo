@@ -7,6 +7,7 @@ using BusinessLayer.Service;
 using DataLayer;
 using DataLayer.Repository;
 using DataLayer.RepositoryImpl;
+using Entities_Layer;
 
 namespace BusinessLayer.ServiceImpl
 {
@@ -20,27 +21,27 @@ namespace BusinessLayer.ServiceImpl
             marcaRepository = new MarcaRepositoryImpl();
         }
 
-        public bool Delete(Marca t)
+        public bool Delete(Marcas t)
         {
             return marcaRepository.Delete(t);
         }
 
-        public List<Marca> FindAll()
+        public List<Marcas> FindAll()
         {
             return marcaRepository.FindAll();
         }
 
-        public Marca FindById(int? id)
+        public Marcas FindById(int? id)
         {
             return marcaRepository.FindById(id);
         }
 
-        public bool Save(Marca t)
+        public bool Save(Marcas t)
         {
             return marcaRepository.Save(t);
         }
 
-        public bool Update(Marca t)
+        public bool Update(Marcas t)
         {
             return marcaRepository.Update(t);
         }

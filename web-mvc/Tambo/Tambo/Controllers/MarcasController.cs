@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using BusinessLayer.Service;
 using DataLayer;
 using BusinessLayer.ServiceImpl;
+using Entities_Layer;
 
 namespace Tambo.Controllers
 {
@@ -36,7 +37,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Marca marca = db.Marcas.Find(id);
+            Marcas marca = db.Marcas.Find(id);
             if (marca == null)
             {
                 return HttpNotFound();
@@ -47,14 +48,14 @@ namespace Tambo.Controllers
         // GET: Marcas/Create
         public ActionResult Create()
         {
-            return View(new Marca());
+            return View(new Marcas());
         }
 
         // POST: Marcas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create( Marca marca)
+        public ActionResult Create( Marcas marca)
         {
             try
             {
@@ -79,7 +80,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Marca marca = db.Marcas.Find(id);
+            Marcas marca = db.Marcas.Find(id);
             if (marca == null)
             {
                 return HttpNotFound();
@@ -92,7 +93,7 @@ namespace Tambo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,descripcion")] Marca marca)
+        public ActionResult Edit([Bind(Include = "id,nombre,descripcion")] Marcas marca)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +111,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Marca marca = db.Marcas.Find(id);
+            Marcas marca = db.Marcas.Find(id);
             if (marca == null)
             {
                 return HttpNotFound();
@@ -123,7 +124,7 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Marca marca = db.Marcas.Find(id);
+            Marcas marca = db.Marcas.Find(id);
             db.Marcas.Remove(marca);
             db.SaveChanges();
             return RedirectToAction("Index");

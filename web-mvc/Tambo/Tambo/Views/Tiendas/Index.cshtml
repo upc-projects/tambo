@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DataLayer.Tienda>
+﻿@model IEnumerable<Entities_Layer.Tiendas>
 
 @{
     ViewBag.Title = "Index";
@@ -11,9 +11,6 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Inventario.descripcion)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.nombre)
         </th>
@@ -28,9 +25,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Inventario.descripcion)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.nombre)
         </td>
