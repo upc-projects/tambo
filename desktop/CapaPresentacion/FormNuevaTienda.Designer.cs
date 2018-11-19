@@ -37,6 +37,8 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +79,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(127, 286);
+            this.btnGuardar.Location = new System.Drawing.Point(123, 303);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(107, 32);
             this.btnGuardar.TabIndex = 4;
@@ -114,11 +116,29 @@
             this.txtTelefono.Size = new System.Drawing.Size(206, 22);
             this.txtTelefono.TabIndex = 8;
             // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(140, 267);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(206, 22);
+            this.txtUrl.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "URL:";
+            // 
             // FormNuevaTienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 341);
+            this.ClientSize = new System.Drawing.Size(380, 366);
+            this.Controls.Add(this.txtUrl);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtDescripcion);
@@ -146,5 +166,7 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtUrl;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -59,6 +59,7 @@ namespace CapaPresentacion
                 producto.Codigo = textBoxCodigo.Text;
                 producto.FechaCaducida = textBoxFechaV.Text;
                 producto.Estado = textBoxEstado.Text;
+                producto.Url = textBoxEstado.Text;
 
                 int i = productoNE.RegistrarProducto(producto);
 

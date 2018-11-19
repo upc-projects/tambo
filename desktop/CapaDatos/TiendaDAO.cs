@@ -68,7 +68,7 @@ namespace CapaDatos
                 cmd.Parameters.Add("@NOMBRE", SqlDbType.VarChar).Value = tienda.Nombre;
                 cmd.Parameters.Add("@TELEFONO", SqlDbType.VarChar).Value = tienda.Telefono;
                 cmd.Parameters.Add("@DIRECCION", SqlDbType.VarChar).Value = tienda.Direccion;
-
+                cmd.Parameters.Add("@URL", SqlDbType.NVarChar).Value = tienda.Url;
                 // COMO SE AGREGA ID INVENTARIO ???
 
                 try

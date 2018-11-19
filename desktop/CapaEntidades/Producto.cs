@@ -18,5 +18,6 @@ namespace CapaEntidades
         public string FechaCaducida { get; set; }
         public string Estado { get; set; }
         public string Categoria { get; set; }
+        public string Url { get; set; }
     }
 }

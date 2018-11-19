@@ -72,6 +72,7 @@ namespace CapaDatos
                 cmd.Parameters.Add("@PRECIO", SqlDbType.Money).Value = producto.Precio;
                 cmd.Parameters.Add("@CODIGO", SqlDbType.VarChar).Value = producto.Codigo;
                 cmd.Parameters.Add("@FECHA_VENCIMIENTO", SqlDbType.Date).Value = producto.FechaCaducida;
+                cmd.Parameters.Add("@URL", SqlDbType.NVarChar).Value = producto.Url;
 
                 try
                 {

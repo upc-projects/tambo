@@ -31,6 +31,7 @@ namespace CapaPresentacion
                 objTienda.Nombre = txtNombre.Text;
                 objTienda.Direccion = txtDireccion.Text;
                 objTienda.Telefono = txtTelefono.Text;
+                objTienda.Url = txtUrl.Text;
 
                 int c = tienda.RegistrarTienda(objTienda); 
 
