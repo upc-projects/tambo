@@ -19,6 +19,10 @@ namespace Entities_Layer
         public int id_marca { get; set; }
 
         [Required]
+        [StringLength(250)]
+        public string url { get; set; }
+
+        [Required]
         [StringLength(50)]
         public string nombre { get; set; }
 

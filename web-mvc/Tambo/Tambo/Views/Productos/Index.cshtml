@@ -1,69 +1,44 @@
 ﻿@model IEnumerable<Entities_Layer.Productos>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Productos";
 }
 
-<h2>Index</h2>
+<h2>Productos</h2>
 
-<p>
+<div class="btn btn-info productitos">
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Categorias.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Marcas.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.precio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha_vencimiento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.codigo)
-        </th>
-        <th></th>
-    </tr>
+</div>
+
+<style>
+    .productitos a {
+        color: white;
+        margin: 10px;
+    }
+</style>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Categorias.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Marcas.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha_vencimiento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.codigo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
+
+
+    <div class="card" style="width: 100%; margin: 50px;">
+        <img class="card-img-top" src="https://valenvelas.weebly.com/uploads/2/9/3/5/29355527/3845684_orig.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.nombre)</h5>
+            <h4 class="card-subtitle">@Html.DisplayFor(modelItem => item.precio)</h4>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.Marcas.nombre)</p>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.Categorias.nombre)</p>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.descripcion)</p>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.fecha_vencimiento)</p>
+            <div class="btn btn-primary productitos">
+                @Html.ActionLink("Edit", "Edit", new { id = item.id })
+            </div>
+            <div class="btn btn-success productitos">
+                @Html.ActionLink("Details", "Details", new { id = item.id })
+            </div>
+            <div class="btn btn-danger productitos">
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </div>
+        </div>
+    </div>
 }
 
-</table>
