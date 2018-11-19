@@ -36,6 +36,11 @@ namespace BusinessLayer.ServiceImpl
             return marcaRepository.FindById(id);
         }
 
+        public List<Marcas> findByNombre(string name)
+        {
+            return marcaRepository.findByNombre(name);
+        }
+
         public bool Save(Marcas t)
         {
             return marcaRepository.Save(t);

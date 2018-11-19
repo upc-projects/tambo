@@ -9,5 +9,7 @@ namespace DataLayer.Repository
 {
     public interface IMarcaRepository : CrudRepository<Marcas>
     {
+
+        List<Marcas> findByNombre(string name);
     }
 }

@@ -10,5 +10,6 @@ namespace BusinessLayer.Service
 {
     public interface MarcaService : CrudService<Marcas>
     {
+        List<Marcas> findByNombre(string name);
     }
 }

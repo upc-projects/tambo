@@ -43,6 +43,11 @@ namespace DataLayer.RepositoryImpl
                 .Find(id);
         }
 
+        public List<Marcas> findByNombre(string name)
+        {
+            return context.Marcas.OrderBy(x => x.nombre).Where(x => x.nombre.Contains(name)).ToList();
+        }
+
         public bool Save(Marcas t)
         {
             try
