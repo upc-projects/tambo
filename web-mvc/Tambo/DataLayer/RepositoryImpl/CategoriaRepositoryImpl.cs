@@ -42,6 +42,11 @@ namespace DataLayer.RepositoryImpl
             return context.Categorias.Find(id);
         }
 
+        public List<Categorias> findByName(string name)
+        {
+            return context.Categorias.OrderBy(x => x.nombre).Where(x => x.nombre.Contains(name)).ToList();
+        }
+
         public bool Save(Categorias t)
         {
             try

@@ -36,6 +36,11 @@ namespace BusinessLayer.ServiceImpl
             return categoriaRepository.FindById(id);
         }
 
+        public List<Categorias> findByNombre(string nombre)
+        {
+            return categoriaRepository.findByName(nombre);
+        }
+
         public bool Save(Categorias t)
         {
             return categoriaRepository.Save(t);

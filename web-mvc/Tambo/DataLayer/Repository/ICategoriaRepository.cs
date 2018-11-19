@@ -9,6 +9,6 @@ namespace DataLayer.Repository
 {
     public interface ICategoriaRepository : CrudRepository<Categorias>
     {
-
+        List<Categorias> findByName(string name);
     }
 }

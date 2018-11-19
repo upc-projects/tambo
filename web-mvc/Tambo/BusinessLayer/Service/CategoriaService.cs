@@ -10,6 +10,7 @@ namespace BusinessLayer.Service
 {
     public interface CategoriaService: CrudService<Categorias>
     {
+        List<Categorias> findByNombre(string nombre);
     }
 
 }
