@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Service
 {
-    public interface IInventarioService: CrudService<Inventario>
+    public interface InventarioService: CrudService<Inventario>
     {
     }
 }

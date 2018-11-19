@@ -9,7 +9,7 @@ using Entities_Layer;
 
 namespace BusinessLayer.ServiceImpl
 {
-    class ProductoServiceImpl : CrudService<Productos>
+    public class ProductoServiceImpl : ProductoService
     {
         public ProductoServiceImpl()
         {

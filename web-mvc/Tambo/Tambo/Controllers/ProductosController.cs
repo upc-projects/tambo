@@ -1,25 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using DataLayer;
 using Entities_Layer;
+using BusinessLayer.Service;
+using BusinessLayer.ServiceImpl;
 
 namespace Tambo.Controllers
 {
     public class ProductosController : Controller
     {
+        private ProductoService productoService;
+        private CategoriaService categoriaService;
+        private MarcaService marcaService;
         private TamboContext db = new TamboContext();
+
+        public ProductosController()
+        {
+            productoService = new ProductoServiceImpl();
+            categoriaService = new CategoriaServiceImpl();
+            marcaService = new MarcaServiceImpl();
+        }
 
         // GET: Productos
         public ActionResult Index()
         {
-            var productos = db.Productos.Include(p => p.Categorias).Include(p => p.Marcas);
-            return View(productos.ToList());
+            return View(productoService.FindAll());
         }
 
         // GET: Productos/Details/5
@@ -29,7 +38,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Productos producto = db.Productos.Find(id);
+            Productos producto = productoService.FindById(id);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -40,8 +49,8 @@ namespace Tambo.Controllers
         // GET: Productos/Create
         public ActionResult Create()
         {
-            ViewBag.id_categoria = new SelectList(db.Categorias, "id", "nombre");
-            ViewBag.id_marca = new SelectList(db.Marcas, "id", "nombre");
+            ViewBag.id_categoria = new SelectList(categoriaService.FindAll(), "id", "nombre");
+            ViewBag.id_marca = new SelectList(marcaService.FindAll(), "id", "nombre");
             return View();
         }
 
@@ -54,13 +63,12 @@ namespace Tambo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Productos.Add(producto);
-                db.SaveChanges();
+                productoService.Save(producto);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.id_categoria = new SelectList(db.Categorias, "id", "nombre", producto.id_categoria);
-            ViewBag.id_marca = new SelectList(db.Marcas, "id", "nombre", producto.id_marca);
+            ViewBag.id_categoria = new SelectList(categoriaService.FindAll(), "id", "nombre", producto.id_categoria);
+            ViewBag.id_marca = new SelectList(marcaService.FindAll(), "id", "nombre", producto.id_marca);
             return View(producto);
         }
 
@@ -71,13 +79,13 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Productos producto = db.Productos.Find(id);
+            Productos producto = productoService.FindById(id);
             if (producto == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.id_categoria = new SelectList(db.Categorias, "id", "nombre", producto.id_categoria);
-            ViewBag.id_marca = new SelectList(db.Marcas, "id", "nombre", producto.id_marca);
+            ViewBag.id_categoria = new SelectList(categoriaService.FindAll(), "id", "nombre", producto.id_categoria);
+            ViewBag.id_marca = new SelectList(marcaService.FindAll(), "id", "nombre", producto.id_marca);
             return View(producto);
         }
 
@@ -90,12 +98,11 @@ namespace Tambo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(producto).State = EntityState.Modified;
-                db.SaveChanges();
+                productoService.Update(producto);
                 return RedirectToAction("Index");
             }
-            ViewBag.id_categoria = new SelectList(db.Categorias, "id", "nombre", producto.id_categoria);
-            ViewBag.id_marca = new SelectList(db.Marcas, "id", "nombre", producto.id_marca);
+            ViewBag.id_categoria = new SelectList(categoriaService.FindAll(), "id", "nombre", producto.id_categoria);
+            ViewBag.id_marca = new SelectList(marcaService.FindAll(), "id", "nombre", producto.id_marca);
             return View(producto);
         }
 
@@ -119,9 +126,8 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Productos producto = db.Productos.Find(id);
-            db.Productos.Remove(producto);
-            db.SaveChanges();
+            Productos producto = productoService.FindById(id);
+            productoService.Delete(producto);
             return RedirectToAction("Index");
         }
 

@@ -7,18 +7,30 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Entities_Layer;
+using BusinessLayer.Service;
+using BusinessLayer.ServiceImpl;
 
 namespace Tambo.Controllers
 {
     public class InventariosController : Controller
     {
         private TamboContext db = new TamboContext();
+        private InventarioService inventarioService;
+        private ProductoService productoService;
+        private TiendaService tiendaService;
+
+        public InventariosController()
+        {
+            inventarioService = new InventarioServiceImpl();
+            productoService = new ProductoServiceImpl();
+            tiendaService = new TiendaServiceImpl();
+        }
 
         // GET: Inventarios
         public ActionResult Index()
         {
-            var inventario = db.Inventario.Include(i => i.Productos).Include(i => i.Tiendas);
-            return View(inventario.ToList());
+            var inventario = inventarioService.FindAll();
+            return View(inventario);
         }
 
         // GET: Inventarios/Details/5
@@ -28,7 +40,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Inventario inventario = db.Inventario.Find(id);
+            Inventario inventario = inventarioService.FindById(id);
             if (inventario == null)
             {
                 return HttpNotFound();
@@ -39,8 +51,8 @@ namespace Tambo.Controllers
         // GET: Inventarios/Create
         public ActionResult Create()
         {
-            ViewBag.id_producto = new SelectList(db.Productos, "id", "nombre");
-            ViewBag.id_tienda = new SelectList(db.Tiendas, "id", "nombre");
+            ViewBag.id_producto = new SelectList(productoService.FindAll(), "id", "nombre");
+            ViewBag.id_tienda = new SelectList(tiendaService.FindAll(), "id", "nombre");
             return View();
         }
 
@@ -53,13 +65,12 @@ namespace Tambo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Inventario.Add(inventario);
-                db.SaveChanges();
+                inventarioService.Save(inventario);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.id_producto = new SelectList(db.Productos, "id", "nombre", inventario.id_producto);
-            ViewBag.id_tienda = new SelectList(db.Tiendas, "id", "nombre", inventario.id_tienda);
+            ViewBag.id_producto = new SelectList(productoService.FindAll(), "id", "nombre", inventario.id_producto);
+            ViewBag.id_tienda = new SelectList(tiendaService.FindAll(), "id", "nombre", inventario.id_tienda);
             return View(inventario);
         }
 
@@ -70,13 +81,13 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Inventario inventario = db.Inventario.Find(id);
+            Inventario inventario = inventarioService.FindById(id);
             if (inventario == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.id_producto = new SelectList(db.Productos, "id", "nombre", inventario.id_producto);
-            ViewBag.id_tienda = new SelectList(db.Tiendas, "id", "nombre", inventario.id_tienda);
+            ViewBag.id_producto = new SelectList(productoService.FindAll(), "id", "nombre", inventario.id_producto);
+            ViewBag.id_tienda = new SelectList(tiendaService.FindAll(), "id", "nombre", inventario.id_tienda);
             return View(inventario);
         }
 
@@ -89,12 +100,11 @@ namespace Tambo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(inventario).State = EntityState.Modified;
-                db.SaveChanges();
+                inventarioService.Update(inventario);
                 return RedirectToAction("Index");
             }
-            ViewBag.id_producto = new SelectList(db.Productos, "id", "nombre", inventario.id_producto);
-            ViewBag.id_tienda = new SelectList(db.Tiendas, "id", "nombre", inventario.id_tienda);
+            ViewBag.id_producto = new SelectList(productoService.FindAll(), "id", "nombre", inventario.id_producto);
+            ViewBag.id_tienda = new SelectList(tiendaService.FindAll(), "id", "nombre", inventario.id_tienda);
             return View(inventario);
         }
 
@@ -105,7 +115,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Inventario inventario = db.Inventario.Find(id);
+            Inventario inventario = inventarioService.FindById(id);
             if (inventario == null)
             {
                 return HttpNotFound();
@@ -118,9 +128,8 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Inventario inventario = db.Inventario.Find(id);
-            db.Inventario.Remove(inventario);
-            db.SaveChanges();
+            Inventario inventario = inventarioService.FindById(id);
+            inventarioService.Delete(inventario);
             return RedirectToAction("Index");
         }
 

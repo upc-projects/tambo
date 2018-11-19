@@ -11,7 +11,7 @@ using Entities_Layer;
 
 namespace BusinessLayer.ServiceImpl
 {
-    class InventarioServiceImpl : IInventarioService
+    public class InventarioServiceImpl : InventarioService
     {
         private IInventarioRespository inventarioRepository;
 

@@ -37,7 +37,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Marcas marca = db.Marcas.Find(id);
+            Marcas marca = marcaService.FindById(id);
             if (marca == null)
             {
                 return HttpNotFound();
@@ -80,7 +80,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Marcas marca = db.Marcas.Find(id);
+            Marcas marca = marcaService.FindById(id);
             if (marca == null)
             {
                 return HttpNotFound();
@@ -97,8 +97,7 @@ namespace Tambo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(marca).State = EntityState.Modified;
-                db.SaveChanges();
+                marcaService.Update(marca);
                 return RedirectToAction("Index");
             }
             return View(marca);
@@ -111,7 +110,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Marcas marca = db.Marcas.Find(id);
+            Marcas marca = marcaService.FindById(id);
             if (marca == null)
             {
                 return HttpNotFound();
@@ -124,9 +123,8 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Marcas marca = db.Marcas.Find(id);
-            db.Marcas.Remove(marca);
-            db.SaveChanges();
+            Marcas marca = marcaService.FindById(id);
+            marcaService.Delete(marca);
             return RedirectToAction("Index");
         }
 

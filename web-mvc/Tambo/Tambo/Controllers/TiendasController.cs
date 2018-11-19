@@ -20,13 +20,13 @@ namespace Tambo.Controllers
 
         public TiendasController()
         {
-                tiendaService = new TiendaServiceImpl();
+            tiendaService = new TiendaServiceImpl();
         }
 
         // GET: Tiendas
         public ActionResult Index()
         {
-            return View(db.Tiendas.ToList());
+            return View(tiendaService.FindAll());
         }
 
         // GET: Tiendas/Details/5
@@ -36,7 +36,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tiendas tiendas = db.Tiendas.Find(id);
+            Tiendas tiendas = tiendaService.FindById(id);
             if (tiendas == null)
             {
                 return HttpNotFound();
@@ -80,7 +80,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tiendas tiendas = db.Tiendas.Find(id);
+            Tiendas tiendas = tiendaService.FindById(id);
             if (tiendas == null)
             {
                 return HttpNotFound();
@@ -97,8 +97,7 @@ namespace Tambo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tiendas).State = EntityState.Modified;
-                db.SaveChanges();
+                tiendaService.Update(tiendas);
                 return RedirectToAction("Index");
             }
             return View(tiendas);
@@ -111,7 +110,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tiendas tiendas = db.Tiendas.Find(id);
+            Tiendas tiendas = tiendaService.FindById(id);
             if (tiendas == null)
             {
                 return HttpNotFound();
@@ -124,9 +123,8 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Tiendas tiendas = db.Tiendas.Find(id);
-            db.Tiendas.Remove(tiendas);
-            db.SaveChanges();
+            Tiendas tiendas = tiendaService.FindById(id);
+            tiendaService.Delete(tiendas);
             return RedirectToAction("Index");
         }
 
