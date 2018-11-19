@@ -1,24 +1,24 @@
-﻿using DataLayer.Repository;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataLayer.Repository;
 using Entities_Layer;
 
 namespace DataLayer.RepositoryImpl
 {
-    public class ProductoRepositoryImpl : IProductoRepository
+    public class InventarioRepositoryImpl : IInventarioRepository
     {
         private TamboContext context;
 
-        public ProductoRepositoryImpl()
+        public InventarioRepositoryImpl()
         {
             context = new TamboContext();
         }
 
-        public bool Delete(Productos t)
+        public bool Delete(Inventario t)
         {
             try
             {
@@ -32,18 +32,18 @@ namespace DataLayer.RepositoryImpl
             return true;
         }
 
-        public List<Productos> FindAll()
+        public List<Inventario> FindAll()
         {
-            return context.Productos.ToList();
+            return context.Inventario.ToList();
         }
 
-        public Productos FindById(int? id)
+        public Inventario FindById(int? id)
         {
-            return context.Productos
+            return context.Inventario
                 .Find(id);
         }
 
-        public bool Save(Productos t)
+        public bool Save(Inventario t)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace DataLayer.RepositoryImpl
             return true;
         }
 
-        public bool Update(Productos t)
+        public bool Update(Inventario t)
         {
             try
             {
@@ -71,5 +71,4 @@ namespace DataLayer.RepositoryImpl
             return true;
         }
     }
-}
 }

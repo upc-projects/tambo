@@ -47,6 +47,7 @@
     <Compile Include="ServiceImpl\ProductoServiceImpl.cs" />
     <Compile Include="ServiceImpl\TiendaServiceImpl.cs" />
     <Compile Include="Service\CategoriaService.cs" />
+    <Compile Include="Service\InventarioService.cs" />
     <Compile Include="Service\MarcaService.cs" />
     <Compile Include="Service\CrudService.cs" />
     <Compile Include="Service\ProductoService.cs" />
