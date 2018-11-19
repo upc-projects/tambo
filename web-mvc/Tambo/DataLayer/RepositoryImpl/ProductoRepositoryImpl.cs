@@ -43,6 +43,11 @@ namespace DataLayer.RepositoryImpl
                 .Find(id);
         }
 
+        public List<Productos> findByMarca(Marcas marcas)
+        {
+            return contrx
+        }
+
         public List<Productos> findByNombre(string name)
         {
             return context.Productos.OrderBy(x => x.nombre).

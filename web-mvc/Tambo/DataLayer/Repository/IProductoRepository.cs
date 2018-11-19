@@ -10,5 +10,6 @@ namespace DataLayer.Repository
     public interface IProductoRepository : CrudRepository<Productos>
     {
         List<Productos> findByNombre(string name);
+        List<Productos> findByMarca(Marcas marcas);
     }
 }
