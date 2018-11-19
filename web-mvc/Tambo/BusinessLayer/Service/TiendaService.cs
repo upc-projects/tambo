@@ -10,5 +10,6 @@ namespace BusinessLayer.Service
 {
     public interface TiendaService : CrudService<Tiendas>
     {
+        List<Tiendas> findByName(string name);
     }
 }

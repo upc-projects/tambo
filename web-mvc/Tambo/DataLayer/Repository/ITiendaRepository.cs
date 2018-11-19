@@ -9,5 +9,6 @@ namespace DataLayer.Repository
 {
     public interface ITiendaRepository : CrudRepository<Tiendas>
     {
+        List<Tiendas> findByName(string name);
     }
 }

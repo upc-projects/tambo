@@ -36,6 +36,11 @@ namespace BusinessLayer.ServiceImpl
             return tiendaRepository.FindById(id);
         }
 
+        public List<Tiendas> findByName(string name)
+        {
+            return tiendaRepository.findByName(name);
+        }
+
         public bool Save(Tiendas t)
         {
             return tiendaRepository.Save(t);
