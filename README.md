@@ -2,6 +2,6 @@
   
   # Tambo Desktop
   
-  ![](BD/tambo.jpeg)
+  ![](BD/dbdiagram.JPG)
   
 </div>  
