@@ -20,8 +20,8 @@
 @foreach (var item in Model) {
 
 
-    <div class="card" style="width: 100%; margin: 50px;">
-        <img class="card-img-top" src="https://valenvelas.weebly.com/uploads/2/9/3/5/29355527/3845684_orig.jpg" alt="Card image cap">
+    <div class="card" style="width: 100%; margin-top: 30px;  margin-bottom: 30px; height: 25%;">
+        <img class="card-img-top" src="@item.url" alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">@Html.DisplayFor(modelItem => item.nombre)</h5>
             <h4 class="card-subtitle">@Html.DisplayFor(modelItem => item.precio)</h4>

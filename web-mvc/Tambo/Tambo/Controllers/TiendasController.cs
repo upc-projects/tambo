@@ -93,7 +93,7 @@ namespace Tambo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,telefono,direccion")] Tiendas tiendas)
+        public ActionResult Edit([Bind(Include = "id,nombre,telefono,url,direccion")] Tiendas tiendas)
         {
             if (ModelState.IsValid)
             {

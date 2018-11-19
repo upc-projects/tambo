@@ -59,7 +59,7 @@ namespace Tambo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,id_marca,nombre,descripcion,precio,fecha_vencimiento,codigo,id_categoria")] Productos producto)
+        public ActionResult Create([Bind(Include = "id,id_marca,nombre,descripcion,precio,fecha_vencimiento,codigo,url,id_categoria")] Productos producto)
         {
             if (ModelState.IsValid)
             {
