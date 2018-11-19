@@ -1,45 +1,43 @@
 ﻿@model IEnumerable<Entities_Layer.Tiendas>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tienditas";
 }
 
-<h2>Index</h2>
+<h2>Tienditas</h2>
 
-<p>
+<div class="btn btn-info tienditas">
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.direccion)
-        </th>
-        <th></th>
-    </tr>
+</div>
+
+
+<style>
+    .tienditas a{
+        color: white;
+        margin: 10px;
+    }
+</style>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.direccion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
+
+  
+    <div class="card" style="width: 58rem; margin: 50px;">
+        <img class="card-img-top" src="https://img.elcomercio.pe/files/article_content_ec_fotos/uploads/2017/03/21/58d171c42fa67.jpeg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.nombre)</h5>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.direccion)</p>
+            <p class="card-text">@Html.DisplayFor(modelItem => item.telefono)</p>
+            <div class="btn btn-primary tienditas">
+                @Html.ActionLink("Edit", "Edit", new { id = item.id })
+            </div>
+            <div class="btn btn-success tienditas">
+                @Html.ActionLink("Details", "Details", new { id = item.id })
+            </div>
+            <div class="btn btn-danger tienditas">
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </div>
+        </div>
+    </div>
+
 }
 
-</table>
