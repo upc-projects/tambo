@@ -1,10 +1,11 @@
 ﻿using DataLayer.Repository;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+using Entities_Layer;
 
 namespace DataLayer.RepositoryImpl
 {
@@ -33,12 +34,12 @@ namespace DataLayer.RepositoryImpl
 
         public List<Inventario> FindAll()
         {
-            return context.Inventarios.ToList();
+            return context.Inventario.ToList();
         }
 
         public Inventario FindById(int? id)
         {
-            return context.Inventarios
+            return context.Inventario
                   .Find(id);
         }
 

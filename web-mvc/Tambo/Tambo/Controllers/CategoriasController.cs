@@ -26,7 +26,8 @@ namespace Tambo.Controllers
         // GET: Categorias
         public ActionResult Index()
         {
-            return View(categoriaService.FindAll());
+            var categorias = categoriaService.FindAll();
+            return View(categorias);
         }
 
         // GET: Categorias/Details/5
@@ -36,7 +37,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categorias categoria = db.Categorias.Find(id);
+            Categorias categoria = categoriaService.FindById(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -79,7 +80,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categorias categoria = db.Categorias.Find(id);
+            Categorias categoria = categoriaService.FindById(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -96,8 +97,7 @@ namespace Tambo.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(categoria).State = EntityState.Modified;
-                db.SaveChanges();
+                categoriaService.Update(categoria);
                 return RedirectToAction("Index");
             }
             return View(categoria);
@@ -110,7 +110,7 @@ namespace Tambo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categorias categoria = db.Categorias.Find(id);
+            Categorias categoria = categoriaService.FindById(id);
             if (categoria == null)
             {
                 return HttpNotFound();
@@ -123,9 +123,8 @@ namespace Tambo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Categorias categoria = db.Categorias.Find(id);
-            db.Categorias.Remove(categoria);
-            db.SaveChanges();
+            Categorias categoria = categoriaService.FindById(id);
+            categoriaService.Delete(categoria);
             return RedirectToAction("Index");
         }
 

@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entities_Layer;
 using System.Threading.Tasks;
 
 namespace BusinessLayer.Service
 {
-    public interface IProductoInventarioService: CrudService<Producto_Inventario>
+    public interface InventarioService: CrudService<Inventario>
     {
     }
 }

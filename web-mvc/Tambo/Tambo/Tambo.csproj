@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -155,6 +155,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventariosController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\TiendasController.cs" />
@@ -222,6 +223,11 @@
     <Content Include="Views\Categorias\Details.cshtml" />
     <Content Include="Views\Categorias\Edit.cshtml" />
     <Content Include="Views\Categorias\Index.cshtml" />
+    <Content Include="Views\Inventarios\Create.cshtml" />
+    <Content Include="Views\Inventarios\Delete.cshtml" />
+    <Content Include="Views\Inventarios\Details.cshtml" />
+    <Content Include="Views\Inventarios\Edit.cshtml" />
+    <Content Include="Views\Inventarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

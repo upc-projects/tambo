@@ -7,10 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities_Layer;
 
 namespace BusinessLayer.ServiceImpl
 {
-    class InventarioServiceImpl : IInventarioService
+    public class InventarioServiceImpl : InventarioService
     {
         private IInventarioRespository inventarioRepository;
 

@@ -1,0 +1,42 @@
+﻿@model Entities_Layer.Inventario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inventario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Productos.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productos.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tiendas.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tiendas.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
