@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +58,10 @@
     <Compile Include="Migrations\201811182303024_init.Designer.cs">
       <DependentUpon>201811182303024_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811190042186_initial.cs" />
+    <Compile Include="Migrations\201811190042186_initial.Designer.cs">
+      <DependentUpon>201811190042186_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201811182303024_init.resx">
       <DependentUpon>201811182303024_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811190042186_initial.resx">
+      <DependentUpon>201811190042186_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

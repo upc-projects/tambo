@@ -54,20 +54,14 @@
     <Compile Include="RepositoryImpl\CategoriaRepositoryImpl.cs" />
     <Compile Include="RepositoryImpl\InventarioRepositoryImpl.cs" />
     <Compile Include="RepositoryImpl\MarcaRepositoryImpl.cs" />
-    <Compile Include="RepositoryImpl\ProductoInventarioRepositoryImpl.cs" />
     <Compile Include="RepositoryImpl\ProductoRepositoryImpl.cs" />
     <Compile Include="RepositoryImpl\TiendaRepositoryImpl.cs" />
     <Compile Include="Repository\CrudRepository.cs" />
     <Compile Include="Repository\ICategoriaRepository.cs" />
     <Compile Include="Repository\IInventarioRespository.cs" />
     <Compile Include="Repository\IMarcaRepository.cs" />
-    <Compile Include="Repository\IProductoInventarioRespository.cs" />
     <Compile Include="Repository\IProductoRepository.cs" />
     <Compile Include="Repository\ITiendaRepository.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entities Layer\Entities Layer.csproj">
