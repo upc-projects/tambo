@@ -29,9 +29,9 @@ namespace CapaNegocios
             return tiendaDAO.ListarTiendas();
         }
 
-        public DataTable ListarDetalleInventario(int idInventario)
+        public DataTable ListarDetalleInventario(int idTienda)
         {
-            return tiendaDAO.ListarDetalleInventario(idInventario);
+            return tiendaDAO.ListarDetalleInventario(idTienda);
         }
 
         public int RegistrarTienda(Tienda tienda)

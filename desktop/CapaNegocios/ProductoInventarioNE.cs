@@ -23,7 +23,7 @@ namespace CapaNegocios
             return productoInventarioDAO.ListarInventario();
         }
 
-        public int RegistrarProductoInventario(ProductoInventario productoInventario)
+        public int RegistrarProductoInventario(Inventario productoInventario)
         {
             return productoInventarioDAO.RegistrarProductoInventario(productoInventario);
         }

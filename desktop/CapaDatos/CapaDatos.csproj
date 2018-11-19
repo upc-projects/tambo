@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="CategoriaDAO.cs" />
     <Compile Include="Conexion.cs" />
-    <Compile Include="InventarioDAO.cs" />
     <Compile Include="MarcaDAO.cs" />
     <Compile Include="ProductoDAO.cs" />
     <Compile Include="ProductoInventarioDAO.cs" />

@@ -14,14 +14,14 @@ namespace CapaDatos
         Conexion conexion = new Conexion();
         SqlConnection sqlConnection = new SqlConnection();
 
-        public DataTable ListarDetalleInventario(int idInventario)
+        public DataTable ListarDetalleInventario(int idTienda)
         {
             sqlConnection = conexion.GetConnection();
 
             SqlCommand cmd = new SqlCommand("SP_LISTAR_DETALLE_INVENTARIO", sqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.Add("@IDINVENTARIO", SqlDbType.Int).Value = idInventario;
+            cmd.Parameters.Add("@IDTIENDA", SqlDbType.Int).Value = idTienda;
 
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -68,7 +68,6 @@ namespace CapaDatos
                 cmd.Parameters.Add("@NOMBRE", SqlDbType.VarChar).Value = tienda.Nombre;
                 cmd.Parameters.Add("@TELEFONO", SqlDbType.VarChar).Value = tienda.Telefono;
                 cmd.Parameters.Add("@DIRECCION", SqlDbType.VarChar).Value = tienda.Direccion;
-                cmd.Parameters.Add("@ID_INVENTARIO", SqlDbType.Int).Value = tienda.ObjInventario.Id;
 
                 // COMO SE AGREGA ID INVENTARIO ???
 

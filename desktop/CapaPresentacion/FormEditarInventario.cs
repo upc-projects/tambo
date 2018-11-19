@@ -33,15 +33,15 @@ namespace CapaPresentacion
                 Producto objProducto = new Producto();
                 objProducto.Id = int.Parse(CBProducto.SelectedValue.ToString());
 
-                Inventario objInventario = new Inventario();
-                objInventario.Id = int.Parse(CBTienda.SelectedValue.ToString());
+                Tienda objTienda = new Tienda();
+                objTienda.Id = int.Parse(CBTienda.SelectedValue.ToString());
 
-                ProductoInventario objProductoInventario = new ProductoInventario();
-                objProductoInventario.ObjProducto = objProducto;
-                objProductoInventario.ObjInvantario = objInventario;
-                objProductoInventario.Stock = int.Parse(NUDCantidad.Text);
+                Inventario Objinventario = new Inventario();
+                Objinventario.ObjProducto = objProducto;
+                Objinventario.ObjTienda = objTienda;
+                Objinventario.Stock = int.Parse(NUDCantidad.Text);
 
-                int i = productoInventario.RegistrarProductoInventario(objProductoInventario);
+                int i = productoInventario.RegistrarProductoInventario(Objinventario);
 
                 MessageBox.Show("Inventario registrado", "Mensaje", MessageBoxButtons.OK);
                 this.Close();
@@ -62,7 +62,7 @@ namespace CapaPresentacion
 
             CBTienda.DataSource = tienda.ListarTienda();
             CBTienda.DisplayMember = "nombre";
-            CBTienda.ValueMember = "id_inventario";
+            CBTienda.ValueMember = "id";
         }
     }
 }

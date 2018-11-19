@@ -15,39 +15,22 @@ namespace CapaPresentacion
     public partial class FormNuevaTienda : Form
     {
         private TiendaNE tienda;
-        private InventarioNE inventario;
 
         public FormNuevaTienda()
         {
             InitializeComponent();
             tienda = new TiendaNE();
-            inventario = new InventarioNE();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                string descripcion = "Tienda en " + txtDireccion.Text;
                 Tienda objTienda = new Tienda();
-                Inventario objInventario = new Inventario();
-                objInventario.Descripcion = descripcion;
-                try
-                {
-                    int i = inventario.RegistrarInventario(objInventario);
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    throw;
-                }
-
-                objInventario = inventario.ListarInventarioDireccion(descripcion);
-
+                
                 objTienda.Nombre = txtNombre.Text;
                 objTienda.Direccion = txtDireccion.Text;
                 objTienda.Telefono = txtTelefono.Text;
-                objTienda.ObjInventario = objInventario;
 
                 int c = tienda.RegistrarTienda(objTienda); 
 

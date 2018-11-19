@@ -13,12 +13,12 @@ namespace CapaPresentacion
 {
     public partial class FormListarInventario : Form
     {
-        private InventarioNE inventario;
+        private ProductoInventarioNE inventario;
 
         public FormListarInventario()
         {
             InitializeComponent();
-            inventario = new InventarioNE();
+            inventario = new ProductoInventarioNE();
         }
 
         private void FormListarInventario_Load(object sender, EventArgs e)

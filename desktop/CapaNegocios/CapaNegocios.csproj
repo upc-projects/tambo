@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriaNE.cs" />
-    <Compile Include="InventarioNE.cs" />
     <Compile Include="MarcaNE.cs" />
     <Compile Include="ProductoInventarioNE.cs" />
     <Compile Include="ProductoNE.cs" />

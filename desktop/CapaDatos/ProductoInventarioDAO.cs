@@ -23,7 +23,7 @@ namespace CapaDatos
             return dataTable;
         }
 
-        public int RegistrarProductoInventario(ProductoInventario productoInventario)
+        public int RegistrarProductoInventario(Inventario productoInventario)
         {
             sqlConnection = conexion.GetConnection();
             sqlConnection.Open();
@@ -32,7 +32,7 @@ namespace CapaDatos
             {
                 SqlCommand cmd = new SqlCommand("SP_REGISTRAR_PRODUCTO_INVENTARIO", sqlConnection, tr);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@ID_INVENTARIO", SqlDbType.Int).Value = productoInventario.ObjInvantario.Id;
+                cmd.Parameters.Add("@ID_TIENDA", SqlDbType.Int).Value = productoInventario.ObjTienda.Id;
                 cmd.Parameters.Add("@ID_PRODUCTO", SqlDbType.Int).Value = productoInventario.ObjProducto.Id;
                 cmd.Parameters.Add("@STOCK", SqlDbType.Int).Value = productoInventario.Stock;
 

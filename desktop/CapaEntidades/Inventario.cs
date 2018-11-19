@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +8,8 @@ namespace CapaEntidades
 {
     public class Inventario
     {
-        public int Id { get; set; }
-        public string Descripcion { get; set; }
-        private List<ProductoInventario> ListProductoInventarios { get; set; }
+        public Tienda ObjTienda { get; set; }
+        public Producto ObjProducto { get; set; }
+        public int Stock { get; set; }
     }
 }

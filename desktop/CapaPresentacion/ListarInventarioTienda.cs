@@ -26,7 +26,7 @@ namespace CapaPresentacion
         {
             cboTienda.DataSource = tienda.ListarTienda();
             cboTienda.DisplayMember = "nombre";
-            cboTienda.ValueMember = "id_inventario";
+            cboTienda.ValueMember = "id";
         }
 
         private void LlenarInvetario(int id)
@@ -37,8 +37,10 @@ namespace CapaPresentacion
         private void btnCargar_Click(object sender, EventArgs e)
         {
             Inventario objInventario = new Inventario();
-            objInventario.Id = int.Parse(cboTienda.SelectedValue.ToString());
-            LlenarInvetario(objInventario.Id);
+            Tienda objTienda = new Tienda();
+            objTienda.Id = int.Parse(cboTienda.SelectedValue.ToString());
+            objInventario.ObjTienda = objTienda;
+            LlenarInvetario(objInventario.ObjTienda.Id);
         }
     }
 }
